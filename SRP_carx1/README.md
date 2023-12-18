@@ -1,11 +1,34 @@
 # Simple SRP example
 
-This repo contains Unity sample (for 2021.3.19f1 version) which uses simple SRP implementation based on 3 first chapters of [Catlike Coding](https://catlikecoding.com/unity/tutorials/custom-srp/) tutors.
+пункт 1. Реализация повреждения кузова
+1) На модель машины добавлены RigidBody, скрипт car_controller, реализовывающий управление машиной на кнопки WASD (пробел - тормоз). Функция RotateWheel отвечает за вращение колес вокруг своей оси.
+2) Добавлен скрипт СameraController, описывающий поведения камеры на движение мыши. Камера от 3 лица наведена на машину и может двигаться по оси x и по оси y.
+3) Скрипт СarDamage, реализующий повреждение машины при столкновении с объектом.
+   переменные:
+   3.1)maxMoveDelta - максимальное расстояние, на которое может перемещаться каждая вершина при столкновении.
+   3.2)maxCollisionStrength - максимальная сила столкновения, влияющая на повреждение.
+   3.3)YforceDamp - коэффициент затухания вертикальной составляющей силы.
+   3.4)demolutionRange - радиус зоны, в пределах которой происходит столкновение.
+   3.5)impactDirManipulator - манипулятор направления воздействия при столкновении.
+   3.6)meshList - vассив объектов MeshFilter для обработки/
+   функции:
+   а) Start()
+      инициализирует массив meshfilters на основе MeshList. вычисляет радиус зоны повреждения (sqrDemRange)
+      LoadOriginalMeshData()
+      метод для хранения оригинальных вершин мешей
+      OnCollisionEnter(Collision collision)
+      рассчитывает силу столкновения colStrength
+      OnMeshForce(Vector4 originPosAndForce)
+      применяет силу ко всем вершинам в зависимости от растстояния до центра воздействия и силы столкновения
+   
+пункт 2. -
 
-Examples of basic lit and unlit materials can be found in **Main** scene.
+пункт 3.
+1) составлена сцена из скачанных assetов, добавлена текстура skybox.
+2) на объекты (деревья, дома) установлены boxcollider для взаимодействия с машиной (столкновение).
 
-![MaterialExamples](ExampleImages/main_scene.png "Material Examples")
 
-Imported car model is placed in **Car** scene.
 
-![CarScene](ExampleImages/car_scene.png "Car Scene")
+
+
+
