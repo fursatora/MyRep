@@ -36,10 +36,6 @@ public class CarDamage : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R)) Repair();
-    }
 
     void LoadOriginalMeshData()
     {
@@ -50,15 +46,6 @@ public class CarDamage : MonoBehaviour
         }
     }
 
-    void Repair()
-    {
-        for (int i = 0; i < meshfilters.Length; i++)
-        {
-            meshfilters[i].mesh.vertices = originalMeshData[i].permaVerts;
-            meshfilters[i].mesh.RecalculateNormals();
-            meshfilters[i].mesh.RecalculateBounds();
-        }
-    }
 
     public void OnCollisionEnter(Collision collision)
     {
