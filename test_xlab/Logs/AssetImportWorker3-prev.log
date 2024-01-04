@@ -1,0 +1,1401 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.14f1 (eff2de9070d8) revision 15725278'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit CoreSingleLanguage' Language: 'ru' Physical Memory: 16169 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.14f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker3
+-projectPath
+C:/Users/Vikah/OneDrive/Рабочий стол/MyRep/test_xlab
+-logFile
+Logs/AssetImportWorker3.log
+-srvPort
+63314
+Successfully changed project path to: C:/Users/Vikah/OneDrive/Рабочий стол/MyRep/test_xlab
+C:/Users/Vikah/OneDrive/Рабочий стол/MyRep/test_xlab
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [21316] Host "[IP] 10.255.0.1 [Port] 0 [Flags] 2 [Guid] 545038538 [EditorId] 545038538 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-5OC3CP9D) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [21316] Host "[IP] 10.255.0.1 [Port] 0 [Flags] 2 [Guid] 545038538 [EditorId] 545038538 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-5OC3CP9D) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
+Refreshing native plugins compatible for Editor in 7.89 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.14f1 (eff2de9070d8)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.14f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Vikah/OneDrive/Рабочий стол/MyRep/test_xlab/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) UHD Graphics (ID=0x9bc4)
+    Vendor:   Intel
+    VRAM:     8084 MB
+    Driver:   26.20.100.7985
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.14f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.14f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56580
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.032249 seconds.
+- Loaded All Assemblies, in  0.827 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.585 seconds
+Domain Reload Profiling: 1404ms
+	BeginReloadAssembly (247ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (2ms)
+	RebuildCommonClasses (67ms)
+	RebuildNativeTypeToScriptingClass (23ms)
+	initialDomainReloadingComplete (150ms)
+	LoadAllAssembliesAndSetupDomain (330ms)
+		LoadAssemblies (235ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (326ms)
+			TypeCache.Refresh (324ms)
+				TypeCache.ScanAssembly (292ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (586ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (455ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (27ms)
+			SetLoadedEditorAssemblies (17ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (5ms)
+			ProcessInitializeOnLoadAttributes (297ms)
+			ProcessInitializeOnLoadMethodAttributes (109ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.895 seconds
+Refreshing native plugins compatible for Editor in 2.21 ms, found 0 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.892 seconds
+Domain Reload Profiling: 1784ms
+	BeginReloadAssembly (339ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (13ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (36ms)
+	RebuildCommonClasses (70ms)
+	RebuildNativeTypeToScriptingClass (29ms)
+	initialDomainReloadingComplete (98ms)
+	LoadAllAssembliesAndSetupDomain (353ms)
+		LoadAssemblies (471ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (92ms)
+			TypeCache.Refresh (71ms)
+				TypeCache.ScanAssembly (51ms)
+			ScanForSourceGeneratedMonoScriptInfo (14ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (894ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (612ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (20ms)
+			SetLoadedEditorAssemblies (7ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (128ms)
+			ProcessInitializeOnLoadAttributes (374ms)
+			ProcessInitializeOnLoadMethodAttributes (49ms)
+			AfterProcessingInitializeOnLoad (34ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 1.40 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1101 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (50.4 KB). Loaded Objects now: 1580.
+Memory consumption went from 78.9 MB to 78.8 MB.
+Total: 4.642200 ms (FindLiveObjects: 0.149000 ms CreateObjectMapping: 0.054300 ms MarkObjects: 4.329200 ms  DeleteObjects: 0.108200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+========================================================================
+Received Import Request.
+  Time since last request: 15426.124737 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Bushes/Bush1/bush_1.fbx
+  artifactKey: Guid(c79853d1a22a5cb49b15a3715056104d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Bushes/Bush1/bush_1.fbx using Guid(c79853d1a22a5cb49b15a3715056104d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cd34c5788ddb59f24147d9ac224921e') in 0.327183 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/CombinedAssets/CombinedAssets1/combined_assets_1.fbx
+  artifactKey: Guid(d58aab12781feca4baaee1fc5355ed43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/CombinedAssets/CombinedAssets1/combined_assets_1.fbx using Guid(d58aab12781feca4baaee1fc5355ed43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29efb2b00bfd411b2709b3c06676158b') in 0.040008 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000093 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Logs/Log2/log_2.fbx
+  artifactKey: Guid(2d08b57623f3a104498ad09cfcc53f71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Logs/Log2/log_2.fbx using Guid(2d08b57623f3a104498ad09cfcc53f71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c322b5945a20441101bb26eda446f7cf') in 0.023164 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Logs/Log3/log_3.fbx
+  artifactKey: Guid(e1196a40236a0f34580cf178529a4baa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Logs/Log3/log_3.fbx using Guid(e1196a40236a0f34580cf178529a4baa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10bf345926bfcf792995f78973c0ef5f') in 0.020648 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Mushrooms/Mushroom3/mushroom_3.fbx
+  artifactKey: Guid(aab7aba04a6f55a428f96a2930fcc9b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Mushrooms/Mushroom3/mushroom_3.fbx using Guid(aab7aba04a6f55a428f96a2930fcc9b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50c9b3f2e923f397b990063082dc5377') in 0.019888 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Plants/Plant3/plant_3.fbx
+  artifactKey: Guid(30ae5fea4e92c4a449399b062965b44f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Plants/Plant3/plant_3.fbx using Guid(30ae5fea4e92c4a449399b062965b44f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c3e20121b7c3a3f9a20e7b260943322') in 0.020563 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Plants/Plant5/plant_5.fbx
+  artifactKey: Guid(bb037aee249e689428ec651b0b51f628) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Plants/Plant5/plant_5.fbx using Guid(bb037aee249e689428ec651b0b51f628) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '953366e39b82c8956157231414773126') in 0.022740 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Plants/Plant8/plant_8.fbx
+  artifactKey: Guid(de293cfbfb38a70458f6b760859553f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Plants/Plant8/plant_8.fbx using Guid(de293cfbfb38a70458f6b760859553f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed5936fe40e76e078dd7858bcc3d3b41') in 0.020907 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000079 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock1/rock_1.fbx
+  artifactKey: Guid(3db6b60ec2edaed4d87a20221f431ee4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock1/rock_1.fbx using Guid(3db6b60ec2edaed4d87a20221f431ee4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'caba233b971512fb40800b53c718a4cb') in 0.019447 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000108 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Logs/Log5/log_5.fbx
+  artifactKey: Guid(787d8cf2854fc264d825a4e1fe281265) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Logs/Log5/log_5.fbx using Guid(787d8cf2854fc264d825a4e1fe281265) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56774b1e79e15dbd7c4b02c9b5909284') in 0.019577 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000090 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock6/rock_6.fbx
+  artifactKey: Guid(b24caf45e6f47d440b5cf772700ff52a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock6/rock_6.fbx using Guid(b24caf45e6f47d440b5cf772700ff52a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17727310a39ae6ea43cb779fcc585f12') in 0.019116 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000089 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock11/rock_11.fbx
+  artifactKey: Guid(70d2bb889f13b814e8c483f173e5adb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock11/rock_11.fbx using Guid(70d2bb889f13b814e8c483f173e5adb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad8843a21d1f9add55b3f783d099f769') in 0.020904 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock13/rock_13.fbx
+  artifactKey: Guid(12b3897d9062b2a46846c0bf971d0e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock13/rock_13.fbx using Guid(12b3897d9062b2a46846c0bf971d0e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34482ea508dc9fb82d31b00e40ba4e87') in 0.021217 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock16/rock_16.fbx
+  artifactKey: Guid(1c6f2256caa6a56479f206ed0f088d84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock16/rock_16.fbx using Guid(1c6f2256caa6a56479f206ed0f088d84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e481f445daec868581a2cd162dccf16') in 0.021869 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock19/rock_19.fbx
+  artifactKey: Guid(f954f6176fd765c4ca6082f9c5c0cf0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock19/rock_19.fbx using Guid(f954f6176fd765c4ca6082f9c5c0cf0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37c8c7a0c86643f12ae1ee2c1f937c4b') in 0.025427 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock21/rock_21.fbx
+  artifactKey: Guid(6bbf1a16cde3fa04d9c2fe39b645254a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock21/rock_21.fbx using Guid(6bbf1a16cde3fa04d9c2fe39b645254a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0236ec2752d7a926e968de97c26c8f52') in 0.057412 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Cliffs/Cliff1/cliff_1.fbx
+  artifactKey: Guid(d14e9e1099a52d24e9717f38fc099bf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Cliffs/Cliff1/cliff_1.fbx using Guid(d14e9e1099a52d24e9717f38fc099bf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b78e8ebe432486b03efe9ab9527fbfa') in 0.037158 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock20/rock_20.fbx
+  artifactKey: Guid(fc2087f6594cb064cb9e4a15efc6e7a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock20/rock_20.fbx using Guid(fc2087f6594cb064cb9e4a15efc6e7a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8d42e45a2451a1227298521edb94493') in 0.040220 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Bushes/Bush6/bush_6.fbx
+  artifactKey: Guid(9f99fffde8da15f488229ffa13e667a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Bushes/Bush6/bush_6.fbx using Guid(9f99fffde8da15f488229ffa13e667a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '300809c66364116a87ba6450f044ef23') in 0.057692 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000145 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock5/rock_5.fbx
+  artifactKey: Guid(acb1270f9a261d146b55fb7e154f3ce9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock5/rock_5.fbx using Guid(acb1270f9a261d146b55fb7e154f3ce9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fda0924bae82521dad2bcd803c937394') in 0.075163 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000119 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock12/rock_12.fbx
+  artifactKey: Guid(03560a270954d3941b2526c93f0f3a92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock12/rock_12.fbx using Guid(03560a270954d3941b2526c93f0f3a92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76473a3b4ffa71ab323a90f4f716824c') in 0.047631 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock15/rock_15.fbx
+  artifactKey: Guid(6f29d52a962a2ec47a296c132f576a0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock15/rock_15.fbx using Guid(6f29d52a962a2ec47a296c132f576a0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06c57474304dc58f972681b45fd2b091') in 0.040860 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000078 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock7/rock_7.fbx
+  artifactKey: Guid(1de014002e771b84a9ff19bc335145ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock7/rock_7.fbx using Guid(1de014002e771b84a9ff19bc335145ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a836f7b48c57cc36375909f95c5089ec') in 0.052486 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Plants/Plant10/plant_10.fbx
+  artifactKey: Guid(5250b3781bb03b048977ae7fbaddd4e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Plants/Plant10/plant_10.fbx using Guid(5250b3781bb03b048977ae7fbaddd4e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b81f438a6dd07c28ddf5ec2a56c2ca3b') in 0.052315 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Kevin Iglesias/Villager Animations/Models/Other/GoldOre.fbx
+  artifactKey: Guid(638e7fa3cceb8f64c99510371c250a72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kevin Iglesias/Villager Animations/Models/Other/GoldOre.fbx using Guid(638e7fa3cceb8f64c99510371c250a72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7df03538a2031b615f80262e6838c02b') in 0.123435 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock14/rock_14.fbx
+  artifactKey: Guid(f729920daf6d2a04f9018ee6d7ff4938) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock14/rock_14.fbx using Guid(f729920daf6d2a04f9018ee6d7ff4938) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b2b0f234baf514b30f441dc5c87ab60') in 0.059907 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Bushes/Bush8/bush_8.fbx
+  artifactKey: Guid(c023717c218ada148b43bd218b69a339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Bushes/Bush8/bush_8.fbx using Guid(c023717c218ada148b43bd218b69a339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b53e3956aac0511c879a1cc329cfe2eb') in 0.071010 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Grass/Grass2/grass_2.fbx
+  artifactKey: Guid(05083f8fdf6ccc144844440b95ef1597) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Grass/Grass2/grass_2.fbx using Guid(05083f8fdf6ccc144844440b95ef1597) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '685c8c9237f9584074b9bf66d20a7b79') in 0.071579 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Cliffs/Cliff4/cliff_4.fbx
+  artifactKey: Guid(dd76b5e048f187f439b253fffba695c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Cliffs/Cliff4/cliff_4.fbx using Guid(dd76b5e048f187f439b253fffba695c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60b3f2884f338cf5c90de2c0df684124') in 0.111024 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock4/rock_4.fbx
+  artifactKey: Guid(e89ca4e3d55fefd44abdbc084e8daaad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock4/rock_4.fbx using Guid(e89ca4e3d55fefd44abdbc084e8daaad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c15618253d5e4d1de5b35d50b65c9588') in 0.064473 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock9/rock_9.fbx
+  artifactKey: Guid(97fba8776dee47e47891d5f537f8dfb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock9/rock_9.fbx using Guid(97fba8776dee47e47891d5f537f8dfb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dcf750a0728eab467daf30237d5a0c4') in 0.067621 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000120 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock17/rock_17.fbx
+  artifactKey: Guid(942b1b10f8077c4489b7e595c43fd37a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock17/rock_17.fbx using Guid(942b1b10f8077c4489b7e595c43fd37a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '669301a27ae2f3751f51c73286f64bc2') in 0.047460 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Cliffs/Cliff9/cliff_9.fbx
+  artifactKey: Guid(b5193c4104a19964a88080b586933547) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Cliffs/Cliff9/cliff_9.fbx using Guid(b5193c4104a19964a88080b586933547) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4225e3ed5a23e8daafeaf0e79fed9096') in 0.037663 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Mushrooms/Mushroom2/mushroom_2.fbx
+  artifactKey: Guid(0c08406cba5d90143a2cc369489b56af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Mushrooms/Mushroom2/mushroom_2.fbx using Guid(0c08406cba5d90143a2cc369489b56af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb74b26883ea905a57902f9b88a874c0') in 0.039271 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000129 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Debris/Debris4/debris_4.fbx
+  artifactKey: Guid(2d534371cee744540a503b0c05f15c73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Debris/Debris4/debris_4.fbx using Guid(2d534371cee744540a503b0c05f15c73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4acbeb8066a752f8a345eb838006b692') in 0.034939 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock10/rock_10.fbx
+  artifactKey: Guid(1e6ed786fd48e3f40add0f9d2d3cf4b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock10/rock_10.fbx using Guid(1e6ed786fd48e3f40add0f9d2d3cf4b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '187628c6f11b690c185f6495cb7fec29') in 0.113917 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 15.344093 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock24/rock_24.fbx
+  artifactKey: Guid(af6b355655f7d4d42a3c8fffd6edcdfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock24/rock_24.fbx using Guid(af6b355655f7d4d42a3c8fffd6edcdfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bed479f96c4ab9386578548fa4818af0') in 0.058448 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000103 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock25/rock_25.fbx
+  artifactKey: Guid(91b78f2f55768254ba6a9dcaca4e89da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock25/rock_25.fbx using Guid(91b78f2f55768254ba6a9dcaca4e89da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '501bd3675e6773868a6e3e5ead87d599') in 0.022091 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Paths/RockPath1/rock_path_1.fbx
+  artifactKey: Guid(47e70109901a7614db46ff6aba962ad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Paths/RockPath1/rock_path_1.fbx using Guid(47e70109901a7614db46ff6aba962ad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62af029f0ca7c69abdd902ae26e0c5d6') in 0.020864 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/RPGPP_LT/Models/Props/rpgpp_lt_bird_house_01.fbx
+  artifactKey: Guid(8edf1a08abb5cb342a2a608b289c1f91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Props/rpgpp_lt_bird_house_01.fbx using Guid(8edf1a08abb5cb342a2a608b289c1f91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15d0194ee9521ca5c4662383ea32e02f') in 0.033476 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/RPGPP_LT/Models/Props/rpgpp_lt_banner_01a.fbx
+  artifactKey: Guid(d7113c6e2a0f65c4abdb33666078052f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Props/rpgpp_lt_banner_01a.fbx using Guid(d7113c6e2a0f65c4abdb33666078052f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '307e8ad2559e34fbdc10c26e4004c086') in 0.052603 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/RPGPP_LT/Models/Props/rpgpp_lt_bowl_metal_01.fbx
+  artifactKey: Guid(09cc238bd856b5d468789a6d2d0f48ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Props/rpgpp_lt_bowl_metal_01.fbx using Guid(09cc238bd856b5d468789a6d2d0f48ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74368521997bdf834a6d2b5d5af9122b') in 0.036258 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/RPGPP_LT/Models/Props/rpgpp_lt_banner_01b.fbx
+  artifactKey: Guid(dc3de67326229ab459a1320acc34b8ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Props/rpgpp_lt_banner_01b.fbx using Guid(dc3de67326229ab459a1320acc34b8ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9df4d771c766bbe57e21f7968d38629c') in 0.040326 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000086 seconds.
+  path: Assets/RPGPP_LT/Models/Props/rpgpp_lt_bathtub_wood_01.fbx
+  artifactKey: Guid(1a8449922d22bae4791e0335226fa1aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Props/rpgpp_lt_bathtub_wood_01.fbx using Guid(1a8449922d22bae4791e0335226fa1aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92babb698bf4250871102845c5246ad5') in 0.070384 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.031824 seconds.
+  path: Assets/RPGPP_LT/Models/Structures/rpgpp_lt_building_01.fbx
+  artifactKey: Guid(af5390e2a0373984db3740f21c0ec034) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Structures/rpgpp_lt_building_01.fbx using Guid(af5390e2a0373984db3740f21c0ec034) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69d977ac0d6d6cf7d4dfa622e78c3c00') in 0.040420 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/RPGPP_LT/Models/Structures/rpgpp_lt_building_03.fbx
+  artifactKey: Guid(52eeab1f0ce4d934591972b6df5d179b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Structures/rpgpp_lt_building_03.fbx using Guid(52eeab1f0ce4d934591972b6df5d179b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a7160e77305a694883b08d0a3d99f11') in 0.023785 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/RPGPP_LT/Models/Props/rpgpp_lt_chair_01a.fbx
+  artifactKey: Guid(c7acbad2649a15647a7a4dfd8cceb5ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Props/rpgpp_lt_chair_01a.fbx using Guid(c7acbad2649a15647a7a4dfd8cceb5ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '122d9517afa8f0252b85823a66397da8') in 0.021543 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000114 seconds.
+  path: Assets/RPGPP_LT/Models/Nature/rpgpp_lt_bush_01.fbx
+  artifactKey: Guid(d28a5d39d87b52c49824501fac8b689c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Nature/rpgpp_lt_bush_01.fbx using Guid(d28a5d39d87b52c49824501fac8b689c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '940200fa282f7676ddb850149c9bb876') in 0.019523 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000144 seconds.
+  path: Assets/RPGPP_LT/Models/Nature/rpgpp_lt_cloud_01.fbx
+  artifactKey: Guid(b36c73269c1668c4bbfb76bf41a74b15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Nature/rpgpp_lt_cloud_01.fbx using Guid(b36c73269c1668c4bbfb76bf41a74b15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9cb5ebaa80a38600ca9e0a676e507ac') in 0.020179 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000081 seconds.
+  path: Assets/RPGPP_LT/Models/Nature/rpgpp_lt_bush_02.fbx
+  artifactKey: Guid(d4997bb047d8fbb458f4d63b2322ebdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Nature/rpgpp_lt_bush_02.fbx using Guid(d4997bb047d8fbb458f4d63b2322ebdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5df785c430273af3ce18c96223d3c9c0') in 0.026310 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/RPGPP_LT/Models/Nature/rpgpp_lt_flower_02.fbx
+  artifactKey: Guid(7710c12951e94d24eb1b65f105f6823e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Nature/rpgpp_lt_flower_02.fbx using Guid(7710c12951e94d24eb1b65f105f6823e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '688e4036aec51e5457074a72f1b8bf3c') in 0.036221 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000086 seconds.
+  path: Assets/RPGPP_LT/Models/Nature/rpgpp_lt_hill_small_02.fbx
+  artifactKey: Guid(87dc0b67e5fe70f40a31e17b0c0058b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Nature/rpgpp_lt_hill_small_02.fbx using Guid(87dc0b67e5fe70f40a31e17b0c0058b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fb9cf3bba3fea180c30015037e46d24') in 0.020762 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/RPGPP_LT/Models/Props/rpgpp_lt_ladder_01.fbx
+  artifactKey: Guid(5a5a8e9d7228e204a91c0fb79c12479b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Props/rpgpp_lt_ladder_01.fbx using Guid(5a5a8e9d7228e204a91c0fb79c12479b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e7d514fddaa557d250ca06dfc006cba') in 0.018947 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000097 seconds.
+  path: Assets/RPGPP_LT/Models/Nature/rpgpp_lt_mountain_01.fbx
+  artifactKey: Guid(9d123ff5b15c0bd4fbd33779e2acdbd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Nature/rpgpp_lt_mountain_01.fbx using Guid(9d123ff5b15c0bd4fbd33779e2acdbd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5985e6cfd19c2d8a186dcffcf465e8b6') in 0.021981 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/RPGPP_LT/Models/Props/rpgpp_lt_hanger_clothes_01.fbx
+  artifactKey: Guid(30c389f0d35cc414d9e841ff82ce1424) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Props/rpgpp_lt_hanger_clothes_01.fbx using Guid(30c389f0d35cc414d9e841ff82ce1424) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '244d6a6158f09040b97c32dd8c2df261') in 0.022094 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/RPGPP_LT/Models/Nature/rpgpp_lt_rock_small_01.fbx
+  artifactKey: Guid(274fdec0feeaa784f96a62f99c4be287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Nature/rpgpp_lt_rock_small_01.fbx using Guid(274fdec0feeaa784f96a62f99c4be287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d0fdeb35c4ba0b3617f22da573033fd') in 0.019873 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000115 seconds.
+  path: Assets/RPGPP_LT/Models/Nature/rpgpp_lt_rock_03.fbx
+  artifactKey: Guid(455995b8866658b42b3da7b1cab18535) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Nature/rpgpp_lt_rock_03.fbx using Guid(455995b8866658b42b3da7b1cab18535) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22e3da365ee4463de4b5b2965f96b52a') in 0.021004 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000089 seconds.
+  path: Assets/RPGPP_LT/Models/Props/rpgpp_lt_sack_open_01.fbx
+  artifactKey: Guid(1716e599fb056014ca8f5786b3a82fcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Props/rpgpp_lt_sack_open_01.fbx using Guid(1716e599fb056014ca8f5786b3a82fcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0900a0e2568bbc85a0c5e5f53c9f2ce2') in 0.018795 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/RPGPP_LT/Models/Props/rpgpp_lt_table_01.fbx
+  artifactKey: Guid(16c4b1c9bf28bc44eab122106a0e4864) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Props/rpgpp_lt_table_01.fbx using Guid(16c4b1c9bf28bc44eab122106a0e4864) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad9c14b340c51d722627c43a8a84ddb6') in 0.019077 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/RPGPP_LT/Models/Nature/rpgpp_lt_terrain_grass_01.fbx
+  artifactKey: Guid(264414c28ea0fbb41b924fd17d9228b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Nature/rpgpp_lt_terrain_grass_01.fbx using Guid(264414c28ea0fbb41b924fd17d9228b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '063a6f8e6aceeeaf2c52dedac28067f7') in 0.020174 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000078 seconds.
+  path: Assets/RPGPP_LT/Models/Nature/rpgpp_lt_tree_02.fbx
+  artifactKey: Guid(7dca68918011bd644a4dc268eea79b44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Nature/rpgpp_lt_tree_02.fbx using Guid(7dca68918011bd644a4dc268eea79b44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1404b6a0f38ef88e6eaf07f5587d971') in 0.035419 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000113 seconds.
+  path: Assets/RPGPP_LT/Models/Nature/rpgpp_lt_terrain_sand_01.fbx
+  artifactKey: Guid(b75a02a185084be49bc0ead09438de21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Nature/rpgpp_lt_terrain_sand_01.fbx using Guid(b75a02a185084be49bc0ead09438de21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e35d6b74581d2bb21272d7a6ca30c26b') in 0.034325 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/RPGPP_LT/Models/Nature/rpgpp_lt_hill_small_01.fbx
+  artifactKey: Guid(3602432658d7f1540978cbbd6875ad2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Nature/rpgpp_lt_hill_small_01.fbx using Guid(3602432658d7f1540978cbbd6875ad2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abef4f6bf4903446f1bed60684cdc75a') in 0.063820 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000076 seconds.
+  path: Assets/RPGPP_LT/Models/Nature/rpgpp_lt_terrain_path_01b.fbx
+  artifactKey: Guid(70fbff8150321794f8532fef4f4d7c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Nature/rpgpp_lt_terrain_path_01b.fbx using Guid(70fbff8150321794f8532fef4f4d7c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e23e7d26836ad5d8ffc06a2a09e77f04') in 0.074893 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/RPGPP_LT/Models/Nature/rpgpp_lt_tree_pine_01.fbx
+  artifactKey: Guid(58c79ebc04f48c74fa4869c3f7d941fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Nature/rpgpp_lt_tree_pine_01.fbx using Guid(58c79ebc04f48c74fa4869c3f7d941fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d545da9580eaa7959d44f6d3d82ff96') in 0.048691 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/RPGPP_LT/Models/Nature/rpgpp_lt_grass_small_01a.fbx
+  artifactKey: Guid(c191cc4231bc1a940986671275027664) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Nature/rpgpp_lt_grass_small_01a.fbx using Guid(c191cc4231bc1a940986671275027664) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '423ce72327b5d32efe7e6059ab1642fb') in 0.038236 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/RPGPP_LT/Models/Props/rpgpp_lt_chair_01b.fbx
+  artifactKey: Guid(c23d7dd34e2d29a42bf0998f5f20de59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Props/rpgpp_lt_chair_01b.fbx using Guid(c23d7dd34e2d29a42bf0998f5f20de59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab645b636836d074a9d498c3135ab73f') in 0.035213 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/RPGPP_LT/Models/Nature/rpgpp_lt_rock_small_02.fbx
+  artifactKey: Guid(7110966a22a1bd74c894def7bbb4b8cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Nature/rpgpp_lt_rock_small_02.fbx using Guid(7110966a22a1bd74c894def7bbb4b8cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '112bff49d9cf415697b6b537c3a71f93') in 0.055665 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 1.411750 seconds.
+  path: Assets/RPGPP_LT/Models/Props/rpgpp_lt_vase_01.fbx
+  artifactKey: Guid(9bd069d17b875254f9fc1eeccdd647b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Props/rpgpp_lt_vase_01.fbx using Guid(9bd069d17b875254f9fc1eeccdd647b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bfc535ecd3fda94a7f9814507714903') in 0.066361 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Stumps/Stump1/stump_1.fbx
+  artifactKey: Guid(9336db2427e7a57468a3f27be5c55d56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Stumps/Stump1/stump_1.fbx using Guid(9336db2427e7a57468a3f27be5c55d56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b28da958546a24886f483e5c97721bea') in 0.025206 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Stumps/Stump5/stump_5.fbx
+  artifactKey: Guid(69c74e59c23e27b4dbb89b51eaa92290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Stumps/Stump5/stump_5.fbx using Guid(69c74e59c23e27b4dbb89b51eaa92290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82bd1d6aead7b103b265c56b5bb7e52f') in 0.022257 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Stumps/Stump6/stump_6.fbx
+  artifactKey: Guid(ce3bfe1f010be2f41b8fa59c3bb620e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Stumps/Stump6/stump_6.fbx using Guid(ce3bfe1f010be2f41b8fa59c3bb620e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57f8469ba419ad16393b2842c4967a6a') in 0.044290 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000116 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree2/tree_2.fbx
+  artifactKey: Guid(c7e4deed4bf29e446a556146f3e6d499) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree2/tree_2.fbx using Guid(c7e4deed4bf29e446a556146f3e6d499) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5a1460d803cc187f7f4468b938a9928') in 0.020115 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000121 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree3/tree_3.fbx
+  artifactKey: Guid(72ab132d4cd116642bb06dd965c4a349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree3/tree_3.fbx using Guid(72ab132d4cd116642bb06dd965c4a349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '590e2601d92fbeb29b6ef6ce7b1b7587') in 0.020109 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000147 seconds.
+  path: Assets/RPGPP_LT/Models/Props/rpgpp_lt_wood_path_01b.fbx
+  artifactKey: Guid(f867a2534aa85914d9e6b62f681cdf69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Props/rpgpp_lt_wood_path_01b.fbx using Guid(f867a2534aa85914d9e6b62f681cdf69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3a909c9cab49ad3ea36b7120aec1134') in 0.022020 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree13/tree_13.fbx
+  artifactKey: Guid(b7e5b44a7a403a44187e6896e7dcdaca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree13/tree_13.fbx using Guid(b7e5b44a7a403a44187e6896e7dcdaca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3da39be9e3d0048b165af0e31b93bb40') in 0.019107 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000096 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree9/tree_9.fbx
+  artifactKey: Guid(8bb1c403f9daf684aa322594a66ceed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree9/tree_9.fbx using Guid(8bb1c403f9daf684aa322594a66ceed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd64dc94fb74c2c7bb28b07ce8aaf85c4') in 0.019854 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000124 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree19/tree_19.fbx
+  artifactKey: Guid(52a9b6a9d36c4cb46a83a8c3e9f2f8c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree19/tree_19.fbx using Guid(52a9b6a9d36c4cb46a83a8c3e9f2f8c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e98d7496c77298245fe00fd5c90d5ec') in 0.019206 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000114 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree10/tree_10.fbx
+  artifactKey: Guid(cc5e5f6a578f42a498a293e0fa69fa65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree10/tree_10.fbx using Guid(cc5e5f6a578f42a498a293e0fa69fa65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8b7156f59bcbb6c1193f18c7ed09b5a') in 0.021720 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree25/tree_25.fbx
+  artifactKey: Guid(526a4f7e3af76a649841e5ce8bd5cc8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree25/tree_25.fbx using Guid(526a4f7e3af76a649841e5ce8bd5cc8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcd1bf57cd3b578518dc7dda21bb73fe') in 0.019427 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree16/tree_16.fbx
+  artifactKey: Guid(34773dfef32708d408cbfa993e000b7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree16/tree_16.fbx using Guid(34773dfef32708d408cbfa993e000b7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb92ee619f21e422d818ea178ed95f95') in 0.019180 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000126 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree22/tree_22.fbx
+  artifactKey: Guid(656cf1a0962a1a840a6c3be58a0f46bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree22/tree_22.fbx using Guid(656cf1a0962a1a840a6c3be58a0f46bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9767eb2d60ad33b57a852d2e842fe5c9') in 0.026027 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree24/tree_24.fbx
+  artifactKey: Guid(f06afdf1fada6a240b1d903740112206) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree24/tree_24.fbx using Guid(f06afdf1fada6a240b1d903740112206) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e0bbad31577fdc30792256accc67fd3') in 0.048262 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree7/tree_7.fbx
+  artifactKey: Guid(0431bfc7bc7b7f7478441b95e45d4951) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree7/tree_7.fbx using Guid(0431bfc7bc7b7f7478441b95e45d4951) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7366b375d799f0619311553c9d8b149') in 0.038647 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Stumps/Stump2/stump_2.fbx
+  artifactKey: Guid(1d7c3cba70a581b42858d08a890f4c3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Stumps/Stump2/stump_2.fbx using Guid(1d7c3cba70a581b42858d08a890f4c3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba55746994921a8dc05b480df2b938b9') in 0.035552 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000099 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree5/tree_5.fbx
+  artifactKey: Guid(353d0e325a54fa745a9120539f4903fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree5/tree_5.fbx using Guid(353d0e325a54fa745a9120539f4903fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6951170fc5b5ddf297a998f36984701e') in 0.102450 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000099 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree18/tree_18.fbx
+  artifactKey: Guid(b9ae251e1dca88943977de87fd5323f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree18/tree_18.fbx using Guid(b9ae251e1dca88943977de87fd5323f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a6b10dfe68acedbd8c2adf43f024662') in 0.085987 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/RPGPP_LT/Models/Props/rpgpp_lt_vase_02.fbx
+  artifactKey: Guid(65a171ea06543b04fa7aa086cd66702d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Models/Props/rpgpp_lt_vase_02.fbx using Guid(65a171ea06543b04fa7aa086cd66702d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3fdbbd375b85a20a8f1fc329e3541ec') in 0.099553 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 49.326951 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Bushes/Bush3/bush_3.prefab
+  artifactKey: Guid(f452cdb75db6e154a92b59d53ccebfd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Bushes/Bush3/bush_3.prefab using Guid(f452cdb75db6e154a92b59d53ccebfd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ed13428da1a5ef15896c59a662e6dcb') in 0.196614 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Flowers/Flower2/flower_2.prefab
+  artifactKey: Guid(42d1aa1e935099b44bbee795578466c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Flowers/Flower2/flower_2.prefab using Guid(42d1aa1e935099b44bbee795578466c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a412e88c1d451a26581d1ae7c052845c') in 0.014912 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Debris/Debris4/debris_4.prefab
+  artifactKey: Guid(f02ebb96638dd13428efbf6875a91bcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Debris/Debris4/debris_4.prefab using Guid(f02ebb96638dd13428efbf6875a91bcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e022590e71130bddd763afdc6130ae65') in 0.016346 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Bushes/Bush8/bush_8.prefab
+  artifactKey: Guid(9b49303c34b100f4f85015f960f99575) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Bushes/Bush8/bush_8.prefab using Guid(9b49303c34b100f4f85015f960f99575) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a45e426cc0f841ee40a5c1fc4e1e9757') in 0.017322 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Cliffs/Cliff3/cliff_3.prefab
+  artifactKey: Guid(a2071e3181f1c5f47b7acdff96e50f3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Cliffs/Cliff3/cliff_3.prefab using Guid(a2071e3181f1c5f47b7acdff96e50f3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4600d20ca1e4780240f99bc5e8d12dc5') in 0.016830 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Logs/Log4/log_4.prefab
+  artifactKey: Guid(60c625b36fb3e2841a33f33b7ea8d474) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Logs/Log4/log_4.prefab using Guid(60c625b36fb3e2841a33f33b7ea8d474) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad944af15dfdf5bc26ff16ecb99eddb9') in 0.016291 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Debris/Debris1/debris_1.prefab
+  artifactKey: Guid(5d788daea732b364bb3bc1330d4e792f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Debris/Debris1/debris_1.prefab using Guid(5d788daea732b364bb3bc1330d4e792f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa117f52af36b977ade6fbe4b50e6763') in 0.016880 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Mushrooms/Mushroom2/mushroom_2.prefab
+  artifactKey: Guid(495bd8bc2a3e4b6479e5259148ca640f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Mushrooms/Mushroom2/mushroom_2.prefab using Guid(495bd8bc2a3e4b6479e5259148ca640f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33a964f0aeb7fb689d7533afdc2e1f4e') in 0.016876 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Grass/Grass2/grass_2.prefab
+  artifactKey: Guid(c49d07c7413b27948a36f11cb560c9fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Grass/Grass2/grass_2.prefab using Guid(c49d07c7413b27948a36f11cb560c9fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cfda0dd204f0c0fed8ccab680f04cb0') in 0.016940 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Cliffs/Cliff2/cliff_2.prefab
+  artifactKey: Guid(726459f9041ad074592da564916bac1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Cliffs/Cliff2/cliff_2.prefab using Guid(726459f9041ad074592da564916bac1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c26b9f19eec38ebc34e724a2eeb9054') in 0.019252 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Debris/Debris3/debris_3.prefab
+  artifactKey: Guid(c185db8f8ca24c84d8c14fac8fcc9ac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Debris/Debris3/debris_3.prefab using Guid(c185db8f8ca24c84d8c14fac8fcc9ac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e58dfdbac735e723ef654701c6676686') in 0.018638 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Logs/Log1/log_1.prefab
+  artifactKey: Guid(f538c1fe326dc0944b6e90efddf4ce63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Logs/Log1/log_1.prefab using Guid(f538c1fe326dc0944b6e90efddf4ce63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a617a85dbe870a746f9c0c13d26a578') in 0.017455 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Plants/Plant4/plant_4.prefab
+  artifactKey: Guid(7d7017793b4bf6e4a8d3fb9dd5516951) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Plants/Plant4/plant_4.prefab using Guid(7d7017793b4bf6e4a8d3fb9dd5516951) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6cb411d345c6917784c99ecd838042a') in 0.016250 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Cliffs/Cliff4/cliff_4.prefab
+  artifactKey: Guid(368393f9b1a9c7840ac8af597f29afdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Cliffs/Cliff4/cliff_4.prefab using Guid(368393f9b1a9c7840ac8af597f29afdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4cc656f4deea19a83b2485dbc87a664') in 0.016879 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock9/rock_9.prefab
+  artifactKey: Guid(508a2c7da3ae26e4e965c4356365e74a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock9/rock_9.prefab using Guid(508a2c7da3ae26e4e965c4356365e74a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '794af174c931ddbfe6debb08bc8f8825') in 0.025558 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Plants/Plant6/plant_6.prefab
+  artifactKey: Guid(186a57276e95813498c02ad2af30429a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Plants/Plant6/plant_6.prefab using Guid(186a57276e95813498c02ad2af30429a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '203b34a06b271824ec4af2475ad51dec') in 0.017937 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Logs/Log2/log_2.prefab
+  artifactKey: Guid(7550bf33aa50e4f42acf121433c0e6f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Logs/Log2/log_2.prefab using Guid(7550bf33aa50e4f42acf121433c0e6f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81d269fb025e30fa783a216b3a9f66cf') in 0.016193 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock14/rock_14.prefab
+  artifactKey: Guid(f078638c74f942141998666588e700e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock14/rock_14.prefab using Guid(f078638c74f942141998666588e700e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd04887a9365a6c18627d32136f61e56') in 0.017796 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Plants/Plant5/plant_5.prefab
+  artifactKey: Guid(6b99da1a39ea2614cb882ba24d69e059) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Plants/Plant5/plant_5.prefab using Guid(6b99da1a39ea2614cb882ba24d69e059) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3abbdf8ecadbcc525efe7d8d0dc8c7a3') in 0.016119 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock20/rock_20.prefab
+  artifactKey: Guid(cff80d39f98d87248bd14fe34a584570) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock20/rock_20.prefab using Guid(cff80d39f98d87248bd14fe34a584570) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b73e1e33671f567415bc081a25ac80a1') in 0.016639 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock22/rock_22.prefab
+  artifactKey: Guid(e400c68277f05ad48aef490b34bb7182) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock22/rock_22.prefab using Guid(e400c68277f05ad48aef490b34bb7182) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afa26be64a69b1f0070dae0f1317d297') in 0.017294 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock11/rock_11.prefab
+  artifactKey: Guid(12b2e28e9ddd19049a5d43da9296bdff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock11/rock_11.prefab using Guid(12b2e28e9ddd19049a5d43da9296bdff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56244980feac7bb0b25b2aeecf0f9fc1') in 0.017187 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock19/rock_19.prefab
+  artifactKey: Guid(ac4a9b56ec2e59e458a10630513ac2e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock19/rock_19.prefab using Guid(ac4a9b56ec2e59e458a10630513ac2e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1be60f69c276ccb0e08cbffef79175f2') in 0.049339 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock21/rock_21.prefab
+  artifactKey: Guid(c6bcc207d7e7de747bc89bfb7b81c671) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock21/rock_21.prefab using Guid(c6bcc207d7e7de747bc89bfb7b81c671) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1263017f1939af2436784363a6510d26') in 0.073110 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/BushSegment/Bush_Segment2/bush_segment_2.prefab
+  artifactKey: Guid(41fc0c124ab3e524197d7d65009a3abe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/BushSegment/Bush_Segment2/bush_segment_2.prefab using Guid(41fc0c124ab3e524197d7d65009a3abe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f70efb34c38815b0b74bbb9e64ae19ad') in 0.022675 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Paths/RockPath2/rock_path_2.prefab
+  artifactKey: Guid(b026537401cdc0e4196c673431e5bc56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Paths/RockPath2/rock_path_2.prefab using Guid(b026537401cdc0e4196c673431e5bc56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '359ff71c98b44ebfbcc1f4d0af397094') in 0.021951 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock23/rock_23.prefab
+  artifactKey: Guid(7ef77ea1474f930448b1af38bd88afa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock23/rock_23.prefab using Guid(7ef77ea1474f930448b1af38bd88afa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18a927f97ed270a336026aadf19b361e') in 0.041552 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock15/rock_15.prefab
+  artifactKey: Guid(fefd1221c84376442aa6e0e980ce18ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Rocks/Rock15/rock_15.prefab using Guid(fefd1221c84376442aa6e0e980ce18ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78133b0826dde81f4f511c77fb74551f') in 0.028505 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Debris/Debris2/debris_2.prefab
+  artifactKey: Guid(dd0f61a885c7eb349bebcfa27ef3d146) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Debris/Debris2/debris_2.prefab using Guid(dd0f61a885c7eb349bebcfa27ef3d146) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6df44e495a41410f591a1517a4478df1') in 0.045004 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 25.343434 seconds.
+  path: Assets/RPGPP_LT/Prefabs/Props/Wall_decor/Banners/rpgpp_lt_banner_01b.prefab
+  artifactKey: Guid(002f7a569314a244fb643e8ea8d00376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Prefabs/Props/Wall_decor/Banners/rpgpp_lt_banner_01b.prefab using Guid(002f7a569314a244fb643e8ea8d00376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '598218f219fe56df25761ef06194254a') in 0.092224 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/RPGPP_LT/Prefabs/Structures/Buildings/Bld_closed/rpgpp_lt_building_02.prefab
+  artifactKey: Guid(2767c12992d890f44b14f433fe854668) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Prefabs/Structures/Buildings/Bld_closed/rpgpp_lt_building_02.prefab using Guid(2767c12992d890f44b14f433fe854668) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '535eafb58d26a328c60cc53726199b65') in 0.083696 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000137 seconds.
+  path: Assets/RPGPP_LT/Prefabs/Props/Items/rpgpp_lt_broom_01.prefab
+  artifactKey: Guid(a463cb358b3f799499b5078f511ef61e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Prefabs/Props/Items/rpgpp_lt_broom_01.prefab using Guid(a463cb358b3f799499b5078f511ef61e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cebe3a62934c6b912c7cac1bc694969') in 0.044950 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/RPGPP_LT/Prefabs/Props/Containers/rpgpp_lt_box_wood_01.prefab
+  artifactKey: Guid(144403e0e442d2a448335e0c845d665b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Prefabs/Props/Containers/rpgpp_lt_box_wood_01.prefab using Guid(144403e0e442d2a448335e0c845d665b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77aa51346a2301af52d588bd5497882e') in 0.035918 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/RPGPP_LT/Prefabs/Structures/Buildings/Bld_closed/rpgpp_lt_building_05.prefab
+  artifactKey: Guid(386f40ad68cdd3c4fbcb471ef2d93772) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Prefabs/Structures/Buildings/Bld_closed/rpgpp_lt_building_05.prefab using Guid(386f40ad68cdd3c4fbcb471ef2d93772) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01123e67aff5c5a2e76c86b800ab6d0f') in 0.038738 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/RPGPP_LT/Prefabs/Props/Misc/rpgpp_lt_bird_house_01.prefab
+  artifactKey: Guid(7689b2d5def66f04eb3b0905d7b65084) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Prefabs/Props/Misc/rpgpp_lt_bird_house_01.prefab using Guid(7689b2d5def66f04eb3b0905d7b65084) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfe529f1a538776ad121bf0c7c75d8da') in 0.040933 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 4.931694 seconds.
+  path: Assets/RPGPP_LT/Prefabs/Props/Furniture/Chairs/rpgpp_lt_chair_01a.prefab
+  artifactKey: Guid(af46e0e24402dfa49aea336191bc47ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Prefabs/Props/Furniture/Chairs/rpgpp_lt_chair_01a.prefab using Guid(af46e0e24402dfa49aea336191bc47ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1da00f4c38527a59f04c3c0155e2115b') in 0.071946 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/RPGPP_LT/Prefabs/Props/Furniture/Chairs/rpgpp_lt_chair_01b.prefab
+  artifactKey: Guid(7a77ea810bbc0db4992e500affe32dbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Prefabs/Props/Furniture/Chairs/rpgpp_lt_chair_01b.prefab using Guid(7a77ea810bbc0db4992e500affe32dbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68422a33d29018e6207e41a69900937b') in 0.032472 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/RPGPP_LT/Prefabs/Props/Containers/rpgpp_lt_jug_01.prefab
+  artifactKey: Guid(957bb31991bce1640a18d0a109c71f3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Prefabs/Props/Containers/rpgpp_lt_jug_01.prefab using Guid(957bb31991bce1640a18d0a109c71f3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0242ad9897d0383481122e62095ceb17') in 0.029508 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/RPGPP_LT/Prefabs/Nature/Rocks/rpgpp_lt_rocks_tiny_01.prefab
+  artifactKey: Guid(e1154cf6ac27b2f45b4ae35582e7e363) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Prefabs/Nature/Rocks/rpgpp_lt_rocks_tiny_01.prefab using Guid(e1154cf6ac27b2f45b4ae35582e7e363) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e2cfc0b3d9a691e6c04e729071c864f') in 0.053968 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/RPGPP_LT/Prefabs/Props/Items/rpgpp_lt_ladder_01.prefab
+  artifactKey: Guid(7087784e228be8745af45599a5130532) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Prefabs/Props/Items/rpgpp_lt_ladder_01.prefab using Guid(7087784e228be8745af45599a5130532) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e01739f8ebd2baa9f0e37f5a3c45b946') in 0.038527 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/RPGPP_LT/Prefabs/Nature/Terrain/rpgpp_lt_hill_small_02.prefab
+  artifactKey: Guid(6dcae7204dd466c4c862bc640ea7c02e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Prefabs/Nature/Terrain/rpgpp_lt_hill_small_02.prefab using Guid(6dcae7204dd466c4c862bc640ea7c02e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e0a870c23a1e0b527912ec0bb1928b9') in 0.037804 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/RPGPP_LT/Prefabs/Nature/Vegetation/Plants/rpgpp_lt_plant_01.prefab
+  artifactKey: Guid(5286e490afadac545ae3a1595b1e96e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Prefabs/Nature/Vegetation/Plants/rpgpp_lt_plant_01.prefab using Guid(5286e490afadac545ae3a1595b1e96e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5f5a66f48cf36f6b8bf239aec205197') in 0.037246 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/RPGPP_LT/Prefabs/Nature/Terrain/rpgpp_lt_hill_small_01.prefab
+  artifactKey: Guid(5c9211eb71cff4f4996a21d92317f601) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Prefabs/Nature/Terrain/rpgpp_lt_hill_small_01.prefab using Guid(5c9211eb71cff4f4996a21d92317f601) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8b73cb829402d6851af8f0772d8b462') in 0.037333 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/RPGPP_LT/Prefabs/Nature/Vegetation/Grass/rpgpp_lt_grass_small_01b.prefab
+  artifactKey: Guid(e88b7bb02ae149940a5a0cddf34fe370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Prefabs/Nature/Vegetation/Grass/rpgpp_lt_grass_small_01b.prefab using Guid(e88b7bb02ae149940a5a0cddf34fe370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5183f543932ab106b37a2dbecd0c6d8d') in 0.034636 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/RPGPP_LT/Prefabs/Props/Containers/rpgpp_lt_package_01.prefab
+  artifactKey: Guid(388d2ede35ec91345943f17a010818fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Prefabs/Props/Containers/rpgpp_lt_package_01.prefab using Guid(388d2ede35ec91345943f17a010818fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '560000d13596917090c4d6e722843808') in 0.039973 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.551747 seconds.
+  path: Assets/RPGPP_LT/Prefabs/Props/Furniture/Tables/rpgpp_lt_table_01.prefab
+  artifactKey: Guid(4c1686a5131ac8b45bfe913f509289c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Prefabs/Props/Furniture/Tables/rpgpp_lt_table_01.prefab using Guid(4c1686a5131ac8b45bfe913f509289c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9eb1cdc2e81a64467c716c361241f4b0') in 0.041438 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/RPGPP_LT/Prefabs/Props/Misc/rpgpp_lt_wagon_01.prefab
+  artifactKey: Guid(87d1d734739f10440b2bdbb449c09a9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Prefabs/Props/Misc/rpgpp_lt_wagon_01.prefab using Guid(87d1d734739f10440b2bdbb449c09a9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ea2e0d270398d49bb00042b6481fdf6') in 0.090441 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000070 seconds.
+  path: Assets/RPGPP_LT/Prefabs/Props/Containers/rpgpp_lt_trough_01.prefab
+  artifactKey: Guid(7f3b1263233678a4a92861d908051fe3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Prefabs/Props/Containers/rpgpp_lt_trough_01.prefab using Guid(7f3b1263233678a4a92861d908051fe3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5f117062a99bbf07af27db9d21e152f') in 0.039707 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/RPGPP_LT/Prefabs/Nature/Terrain/rpgpp_lt_terrain_path_01b.prefab
+  artifactKey: Guid(63ce2b31e16acab4d8a41f884c36333c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Prefabs/Nature/Terrain/rpgpp_lt_terrain_path_01b.prefab using Guid(63ce2b31e16acab4d8a41f884c36333c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6af2b0a8defc95b702881a4cc655e5d0') in 0.035710 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 3.195016 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Slabs/Slab1/slab_1.prefab
+  artifactKey: Guid(5c146077bdeb6394ba02514ef95f07b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Slabs/Slab1/slab_1.prefab using Guid(5c146077bdeb6394ba02514ef95f07b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd01266b33f21a3aeaea5f9a8a178fee5') in 0.055916 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Slabs/Slab2/slab_2.prefab
+  artifactKey: Guid(f114790dd73d5ba46899308b88880365) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Slabs/Slab2/slab_2.prefab using Guid(f114790dd73d5ba46899308b88880365) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28ac0e7f429fd34466c9c02357c82dc9') in 0.020133 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Stumps/Stump4/stump_4.prefab
+  artifactKey: Guid(33c8397ba59449d4ebfd20cc3afff9dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Stumps/Stump4/stump_4.prefab using Guid(33c8397ba59449d4ebfd20cc3afff9dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9aa45f3bd3e88a4f935ad0ac2c299f0e') in 0.022485 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Stumps/Stump6/stump_6.prefab
+  artifactKey: Guid(72629cd8968f77d4e8b933b6e7977c07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Stumps/Stump6/stump_6.prefab using Guid(72629cd8968f77d4e8b933b6e7977c07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e4929b5ffc786440a7ee7332f89b475') in 0.016809 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree3/tree_3.prefab
+  artifactKey: Guid(ca160a9ce634ac5428075b1cf5ef480e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree3/tree_3.prefab using Guid(ca160a9ce634ac5428075b1cf5ef480e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb30ea35027bf6e1e60ffff031889d0f') in 0.017546 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.001675 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree6/tree_6.prefab
+  artifactKey: Guid(c19ffd6e01489de47b55f19f487cfee7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree6/tree_6.prefab using Guid(c19ffd6e01489de47b55f19f487cfee7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f112743dec36f3d5b55dcda5bda061b') in 0.022176 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 2.987533 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree9/tree_9.prefab
+  artifactKey: Guid(8af78e4a82c71af428d01f59467b8f74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree9/tree_9.prefab using Guid(8af78e4a82c71af428d01f59467b8f74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '501609441e64c2b97e095eb98809e33a') in 0.030282 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.008638 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree12/tree_12.prefab
+  artifactKey: Guid(f6181176d58b0064fb0397991aa08bbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree12/tree_12.prefab using Guid(f6181176d58b0064fb0397991aa08bbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08ec9457cea730c08d3976f9821a54cf') in 0.018141 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.004110 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree15/tree_15.prefab
+  artifactKey: Guid(a51cbbedadaf47d479bc6a1c47b46f5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree15/tree_15.prefab using Guid(a51cbbedadaf47d479bc6a1c47b46f5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42fc0ed7b6b563b69601657f76ba8f11') in 0.017594 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.006029 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree18/tree_18.prefab
+  artifactKey: Guid(83947e578a8055044875f9870ddf4a45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree18/tree_18.prefab using Guid(83947e578a8055044875f9870ddf4a45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f075d6bcb830f053b805dd87af222b6') in 0.018496 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.002391 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree21/tree_21.prefab
+  artifactKey: Guid(ee92f96fb87e1eb49aab3bb4789fdebd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree21/tree_21.prefab using Guid(ee92f96fb87e1eb49aab3bb4789fdebd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07a22077d6a39662967ef5ce55b9777d') in 0.023547 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 3.526646 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree25/tree_25.prefab
+  artifactKey: Guid(b6e44a5c5fcaf244bbae9bd52a851a75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Models/Trees/Tree25/tree_25.prefab using Guid(b6e44a5c5fcaf244bbae9bd52a851a75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebdb5e7a08b5b89b2aa9c0a9bb38551f') in 0.043451 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 350.069697 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Scenes/Demonstration1/ReflectionProbe-1.exr
+  artifactKey: Guid(56fbc552b21c5a249a2d06299e94a18f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Scenes/Demonstration1/ReflectionProbe-1.exr using Guid(56fbc552b21c5a249a2d06299e94a18f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd50b2321706eae2d2f76672a682a713a') in 0.074309 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 83.726149 seconds.
+  path: Assets/Kevin Iglesias/Villager Animations/Prefabs/Human Villager/VillagerHuman.prefab
+  artifactKey: Guid(555aa49bf42b4234ca87d96f604338bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kevin Iglesias/Villager Animations/Prefabs/Human Villager/VillagerHuman.prefab using Guid(555aa49bf42b4234ca87d96f604338bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '462da3ae0ee688fbe0cbec905b2784c1') in 0.060817 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 148
+========================================================================
+Received Import Request.
+  Time since last request: 10.895484 seconds.
+  path: Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Materials/atlass_1_2.mat
+  artifactKey: Guid(8e6f7b24df38b1c4db797b100135d36e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AlignedGames/Polygonal Foliage Asset Package/Art/Materials/atlass_1_2.mat using Guid(8e6f7b24df38b1c4db797b100135d36e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a3c87d4ffda84d3f4f0ec917eb45563') in 0.083739 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 21.357200 seconds.
+  path: Assets/RPGPP_LT/Materials/rpgpp_lt_sky_a.mat
+  artifactKey: Guid(ff33af19770dd3e489f9c65e388009fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Materials/rpgpp_lt_sky_a.mat using Guid(ff33af19770dd3e489f9c65e388009fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9972b11229068b91e4505cd0ba21ce31') in 0.042875 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
