@@ -60,10 +60,13 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.14f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CloudMovement.cs" />
+    <Compile Include="Assets\ParticleControl.cs" />
     <Compile Include="Assets\AlignedGames\Polygonal Foliage Asset Package\Scripts\Utility\FlyCameraBehaviour.cs" />
+    <Compile Include="Assets\FollowPath.cs" />
     <Compile Include="Assets\Scripts\FreeCamera.cs" />
     <Compile Include="Assets\Spawner.cs" />
+    <Compile Include="Assets\MovementPath.cs" />
+    <Compile Include="Assets\ChangeItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AlignedGames\Polygonal Foliage Asset Package\Shaders\Cloud.shader" />
