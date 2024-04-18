@@ -1,0 +1,32 @@
+{% extends "base_generic.html" %}
+{% block content%}
+            <div class="col-md-8 col-lg-9 content-container" style="background-color: #ccdbf6">
+                <h1 class="h3 text-center mt-3">Информация об ученике</h1>
+                <h2 class="lead text-center"></h2>
+                <hr class="mb-5">
+                <section >
+                    <div class="student">
+                        <h1>{{ student.lastname }} {{student.firstname}} {{student.fathername }}
+                            <a class="btn btn-primary" href="{% url 'student_edit' pk=student.pk %}"><span class="glyphicon glyphicon-pencil"></span> Изменить</a>
+                            <a class="btn btn-danger" href="{% url 'student_delete' pk=student.pk %}"><span class="glyphicon glyphicon-trash"></span> Удалить</a>
+                            <a class="btn btn-success" href="{% url 'add_subject_to_student' pk=student.pk %}"><span class="glyphicon glyphicon-plus"></span> Править дисциплины</a>
+
+                        </h1>
+                        <h3>{{ student.grade }} класс</h3>
+                        <p>
+                            <h4>Выбранные дисциплины:
+                            {% for subject in subject.subjects.all %}
+                                <li>{{ subject }}</li>
+                            {% endfor %}
+                        </h4>
+                        </p>
+
+
+
+                        <p><h5>Дата рождения: {{ student.date_of_birth }} </h5></p>
+                        <h5>Номер телефона: {{ student.phone_number }} </h5>
+                        <h5>E-mail: {{ student.email }} </h5>
+                    </div>
+                </section>
+            </div>
+{% endblock content %}

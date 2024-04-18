@@ -342,6 +342,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.14f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.14f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/AlignedGames/Polygonal Foliage Asset Package/Scripts/Utility/FlyCameraBehaviour.cs"
+"Assets/ChangeItem.cs"
 "Assets/FollowPath.cs"
 "Assets/MovementPath.cs"
 "Assets/ParticleControl.cs"

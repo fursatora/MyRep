@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+{% block content%}
+            <div class="col-md-8 col-lg-9 content-container" style="background-color: #ccdbf6">
+                <h1 class="h3 text-center mt-3">Сотрудники</h1>
+                <h2 class="lead text-center"></h2>
+                <hr class="mb-5">
+                <section >
+                    <a class="btn btn-success" href="{% url 'worker_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span> Добавить сотрудника</a>
+                    <h4> </h4>
+                    <h4>Список сотрудников</h4>
+                    <table id="mytable">
+                        <tr><th> </th></th><th>Имя</th><th>Фамилия</th><th>Отчество</th></tr>
+                        {% for worker in workers %}
+                        <tr><td><a href="{% url 'worker_detail' pk=worker.pk %}" class="top-menu"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+                            <td>{{ worker.firstname }}</td>
+                            <td>{{ worker.lastname }}</td>
+                            <td>{{ worker.fathername }}</td></tr>
+                        {% endfor %}
+                    </table>
+
+                </section>
+            </div>
+{% endblock content %}
