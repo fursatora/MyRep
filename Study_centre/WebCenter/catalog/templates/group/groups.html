@@ -5,7 +5,25 @@
                 <h2 class="lead text-center"></h2>
                 <hr class="mb-5">
                 <section >
-                    <p>Контентh...</p>
+                    <a class="btn btn-success" href="{% url 'group_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span> Добавить группу</a>
+                    <h1> </h1>
+                    <h1> </h1>
+                    <h4>Список групп</h4>
+                    <table id="mytable">
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <!--{% for student in students %}
+                        <tr><td><a href="{% url 'group_detail' pk=group.pk %}" class="top-menu"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+                            <td>{{ student.firstname }}</td>
+                            <td>{{ student.lastname }}</td>
+                            <td>{{ student.grade }}</td></tr>
+                        {% endfor %}-->
+                    </table>
+
                 </section>
             </div>
 {% endblock content %}

@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
 from django.http import*
+from django.http import JsonResponse
+
 
 from .forms import StudentForm
 from .models import Student
@@ -12,13 +14,20 @@ from .models import Subject
 
 from .forms import StudentSubjectsForm
 from .models import Student_Subjects
+
+from .forms import GroupForm
+from .forms import Group
+from .forms import GroupTeacherForm
+
+
+
 from django.shortcuts import redirect
 
 
 def index(request):
     return render(request, "index.html")
 def groups(request):
-    return render(request, "groups.html")
+    return render(request, "group/groups.html")
 def schedule(request):
     return render(request, "schedule.html")
 def students(request):
@@ -117,4 +126,46 @@ def worker_delete(request, pk):
         return redirect('workers')
     except Worker.DoesNotExist:
         return HttpResponseNotFound("<h2>Cотрудник не найден</h2>")
+
+def group_new(request):
+    form = GroupForm()
+    if request.method == "POST":
+        form = GroupForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('select_teacher')
+    else:
+        form = GroupForm()
+    return render(request, 'group/group_form.html', {'group_form': form})
+
+""""
+def select_teacher(request):
+    if request.method == 'POST':
+        form = GroupTeacherForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('select_student_form')
+    else:
+        form = GroupTeacherForm()
+    return render(request, 'group/select_teacher_form.html', {'select_teacher_form': form})
+"""
+
+def select_teacher(request):
+    # Получаем сохраненные данные из сессии
+    group_data = request.session.get('group_data', {})
+    if request.method == 'POST':
+        form = GroupTeacherForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('select_student_form')
+    else:
+        # Используем сохраненные данные для инициализации формы
+        form = GroupTeacherForm(initial=group_data)
+    return render(request, 'group/select_teacher_form.html', {'select_teacher_form': form})
+
+def get_teachers(request):
+    subject_id = request.GET.get('subject_id')
+    workers = Worker.objects.filter(subject__id=subject_id)
+    workers_data = [{'id': worker.id, 'firstname': worker.firstname, 'lastname': worker.lastname} for worker in workers]
+    return JsonResponse({'workers': workers})
 

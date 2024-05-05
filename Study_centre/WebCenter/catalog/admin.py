@@ -5,6 +5,7 @@ from .models import Type
 from .models import Worker
 from .models import Student_Subjects
 from .models import Group
+from .models import Group_type_of_math_exam
 
 @admin.register(Subject)
 class SubjectAdmin(admin.ModelAdmin):
@@ -32,3 +33,6 @@ class Student_SubjectsAdmin(admin.ModelAdmin):
 class GroupAdmin(admin.ModelAdmin):
     pass
 
+@admin.register(Group_type_of_math_exam)
+class GroupAdmin(admin.ModelAdmin):
+    pass

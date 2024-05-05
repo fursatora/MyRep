@@ -2,6 +2,8 @@ from django.conf import settings
 from django.db import models
 from django.core.validators import MinLengthValidator
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.exceptions import ValidationError
+
 
 class Subject(models.Model):
     name=models.CharField(max_length=100)
@@ -13,6 +15,7 @@ class Subject(models.Model):
 
 class Type(models.Model):
     name=models.CharField(max_length=100)
+    objects=models.Manager()
 
     def __str__(self):
         return self.name
@@ -52,7 +55,6 @@ class Worker(models.Model):
     registration_date=models.DateField()
     DoesNotExist = models.Manager
 
-
     def __str__(self):
       return self.firstname
 
@@ -69,17 +71,51 @@ class Student_Subjects(models.Model):
     def __str__(self):
         return f"{self.student} - {', '.join(str(subj) for subj in self.subjects.all())}"
 
-
 class Group(models.Model):
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
     grade = models.IntegerField(validators=[
         MaxValueValidator(11),
         MinValueValidator(1)
     ])
+    group_capacity = models.IntegerField(default=1,
+                                         validators=[
+                                            MaxValueValidator(8),
+                                            MinValueValidator(1)
+    ])
     type = models.ForeignKey(Type, on_delete=models.CASCADE)
-    teacher=models.ForeignKey(Worker, on_delete=models.CASCADE)
-    student = models.ManyToManyField(Student,blank=True, null=True)
+    teacher=models.ForeignKey(Worker,
+                              on_delete=models.CASCADE,
+                              null=True,
+                              default=None
+    )
     objects = models.Manager()
 
     def __str__(self):
-        return f"{self.teacher} - {' '.join(self.subject) }"
+        return f"{self.id}-{self.teacher} - {self.subject.name}"
+
+class Students_in_group(models.Model):
+    group=models.ForeignKey(Group, on_delete=models.CASCADE, verbose_name="Группа")
+    student=models.ManyToManyField(Student,blank=True, null=True,verbose_name="Ученики")
+
+
+class Group_type_of_math_exam(models.Model):
+    class ExamType(models.TextChoices):
+        BASE = 'Базовый', 'Базовый'
+        PROF = 'Профильный', 'Профильный'
+
+    group = models.ForeignKey(Group, on_delete=models.CASCADE, verbose_name="Группа")
+    type = models.CharField(
+        max_length=11,
+        choices=ExamType.choices,
+        verbose_name="Тип экзамена",
+    )
+    objects = models.Manager()
+
+    def clean(self):
+        if self.type not in [choice[0] for choice in self.ExamType.choices]:
+            raise ValidationError(f"Invalid exam type. Must be one of {', '.join(choice[0] for choice in self.ExamType.choices)}")
+
+    def save(self, *args, **kwargs):
+        if self.group.subject != 'математика' and self.group.type != 'ЕГЭ':
+            raise ValidationError("Group's subject must be 'математика' to save in this table.")
+        super().save(*args, **kwargs)
