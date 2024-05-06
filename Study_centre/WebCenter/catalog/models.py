@@ -89,6 +89,7 @@ class Group(models.Model):
                               default=None
     )
     objects = models.Manager()
+    created = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.id}-{self.teacher} - {self.subject.name}"
@@ -96,6 +97,8 @@ class Group(models.Model):
 class Students_in_group(models.Model):
     group=models.ForeignKey(Group, on_delete=models.CASCADE, verbose_name="Группа")
     student=models.ManyToManyField(Student,blank=True, null=True,verbose_name="Ученики")
+    objects = models.Manager()
+
 
 
 class Group_type_of_math_exam(models.Model):

@@ -108,7 +108,16 @@ class GroupTeacherForm(forms.ModelForm):
         model = Group
         fields = ('teacher',)
         labels = {'teacher': "Преподаватель"}
-        widgets = {'teacher': forms.Select()}
+        widgets = {'teacher': forms.RadioSelect()}
+
+class StudentsInGroupForm(forms.ModelForm):
+    class Meta:
+        model = Students_in_group
+        fields = ['student']
+        widgets = {
+            'student': forms.CheckboxSelectMultiple(),
+        }
+
 
 
 

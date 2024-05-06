@@ -19,6 +19,8 @@ from .forms import GroupForm
 from .forms import Group
 from .forms import GroupTeacherForm
 
+from .forms import StudentsInGroupForm
+from .models import Students_in_group
 
 
 from django.shortcuts import redirect
@@ -88,7 +90,6 @@ def add_subject_to_student(request, pk):
 
     return render(request, 'student/add_subject_to_student.html', {'form2': form, 'student': student})
 
-
 def worker_detail(request, pk):
     subject= Subject.objects.all()
     worker = get_object_or_404(Worker, pk=pk)
@@ -128,44 +129,41 @@ def worker_delete(request, pk):
         return HttpResponseNotFound("<h2>Cотрудник не найден</h2>")
 
 def group_new(request):
-    form = GroupForm()
     if request.method == "POST":
         form = GroupForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('select_teacher')
+            group = form.save(commit=False)
+            group.created = False
+            group.save()
+            return redirect('select_teacher', group_id=group.id)
     else:
         form = GroupForm()
     return render(request, 'group/group_form.html', {'group_form': form})
 
-""""
-def select_teacher(request):
+def select_teacher(request, group_id):
+    group = get_object_or_404(Group, pk=group_id, created=False)
+    subject = group.subject
     if request.method == 'POST':
-        form = GroupTeacherForm(request.POST)
+        form = GroupTeacherForm(request.POST, instance=group)
         if form.is_valid():
             form.save()
-            return redirect('select_student_form')
+            return redirect('add_student_in_group', group_id=group.id)
     else:
-        form = GroupTeacherForm()
-    return render(request, 'group/select_teacher_form.html', {'select_teacher_form': form})
-"""
+        teachers = Worker.objects.filter(subject=subject)
+        form = GroupTeacherForm(instance=group)
+    return render(request, 'group/select_teacher_form.html', {'select_teacher_form': form, 'teachers': teachers})
 
-def select_teacher(request):
-    # Получаем сохраненные данные из сессии
-    group_data = request.session.get('group_data', {})
+def add_student_in_group(request, group_id):
+    group = get_object_or_404(Group, pk=group_id)
+    students, created = Students_in_group.objects.get_or_create(group=group)
     if request.method == 'POST':
-        form = GroupTeacherForm(request.POST)
+        form = StudentsInGroupForm(request.POST, instance=students)
         if form.is_valid():
             form.save()
-            return redirect('select_student_form')
+            return redirect('groups')
     else:
-        # Используем сохраненные данные для инициализации формы
-        form = GroupTeacherForm(initial=group_data)
-    return render(request, 'group/select_teacher_form.html', {'select_teacher_form': form})
+        form = StudentsInGroupForm(instance=students)
 
-def get_teachers(request):
-    subject_id = request.GET.get('subject_id')
-    workers = Worker.objects.filter(subject__id=subject_id)
-    workers_data = [{'id': worker.id, 'firstname': worker.firstname, 'lastname': worker.lastname} for worker in workers]
-    return JsonResponse({'workers': workers})
+    return render(request, 'group/select_student_form.html', {'add_student_form': form, 'group': group})
+
 
