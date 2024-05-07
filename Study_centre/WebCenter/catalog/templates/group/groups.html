@@ -12,16 +12,20 @@
                     <table id="mytable">
                         <tr>
                             <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th>Класс</th>
+                            <th>Предмет</th>
+                            <th>Тип занятий</th>
+                            <th>Преподаватель</th>
+
                         </tr>
-                        <!--{% for student in students %}
+                        {% for group in groups %}
                         <tr><td><a href="{% url 'group_detail' pk=group.pk %}" class="top-menu"><span class="glyphicon glyphicon-eye-open"></span></a></td>
-                            <td>{{ student.firstname }}</td>
-                            <td>{{ student.lastname }}</td>
-                            <td>{{ student.grade }}</td></tr>
-                        {% endfor %}-->
+                            <td>{{ group.grade }}</td>
+                            <td>{{ group.subject }}</td>
+                            <td>{{ group.type }}</td>
+                            <td>{{ group.teacher.lastname }} {{ group.teacher.firstname }} {{ group.teacher.fathername }}</td>
+                        </tr>
+                        {% endfor %}
                     </table>
 
                 </section>

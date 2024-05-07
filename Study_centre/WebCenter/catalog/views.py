@@ -29,7 +29,8 @@ from django.shortcuts import redirect
 def index(request):
     return render(request, "index.html")
 def groups(request):
-    return render(request, "group/groups.html")
+    groups = Group.objects.all()
+    return render(request, "group/groups.html", {"groups": groups})
 def schedule(request):
     return render(request, "schedule.html")
 def students(request):
@@ -127,6 +128,12 @@ def worker_delete(request, pk):
         return redirect('workers')
     except Worker.DoesNotExist:
         return HttpResponseNotFound("<h2>Cотрудник не найден</h2>")
+
+
+def group_detail(request, pk):
+    group = get_object_or_404(Group, pk=pk)
+    students_in_group, created = Students_in_group.objects.get_or_create(group=group)
+    return render(request, 'group/group_details.html', {'group': group, 'student': students_in_group})
 
 def group_new(request):
     if request.method == "POST":
