@@ -110,14 +110,46 @@ class GroupTeacherForm(forms.ModelForm):
         labels = {'teacher': "Преподаватель"}
         widgets = {'teacher': forms.RadioSelect()}
 
-class StudentsInGroupForm(forms.ModelForm):
+"""class StudentsInGroupForm(forms.ModelForm):
     class Meta:
         model = Students_in_group
         fields = ['student']
         widgets = {
             'student': forms.CheckboxSelectMultiple(),
-        }
+        }"""
+"""class StudentsInGroupForm(forms.ModelForm):
+    student = forms.ModelMultipleChoiceField(
+        queryset=None,
+        widget=forms.CheckboxSelectMultiple,
+    )
 
+    class Meta:
+        model = Students_in_group
+        fields = ['student']"""
+
+class StudentsInGroupForm(forms.ModelForm):
+    student = forms.ModelMultipleChoiceField(
+        queryset=Student.objects.all(),
+        widget=forms.CheckboxSelectMultiple
+    )
+    class Meta:
+        model = Students_in_group
+        fields = '__all__'
+        #fields = ('student',)
+        #labels = {'student': "Ученики"}
+        #widgets = {'student': forms.MultipleChoiceField()}
+
+
+    def __init__(self, *args, **kwargs):
+        group = kwargs.pop('group', None)
+        super().__init__(*args, **kwargs)
+
+        if group:
+            group_subject = group.subject
+            student_ids = Student_Subjects.objects.filter(subjects=group_subject).values_list('student_id', flat=True)
+            self.fields['student'].queryset = self.fields['student'].queryset.filter(id__in=student_ids)
+
+            self.fields['student'].widget = forms.CheckboxSelectMultiple()
 
 
 

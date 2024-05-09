@@ -38,8 +38,10 @@ urlpatterns = [
     path('workers/<int:pk>/delete/', views.worker_delete, name='worker_delete'),
 
     path('groups/new/', views.group_new, name='group_new'),
-    path('groups/<int:group_id>/select_teacher', views.select_teacher, name='select_teacher'),
-    path('groups/<int:group_id>/add_students/', views.add_student_in_group, name='add_student_in_group'),
+    path('groups/<int:pk>/select_teacher', views.select_teacher, name='select_teacher'),
+    path('groups/<int:pk>/add_students/', views.add_student_in_group, name='add_student_in_group'),
     path('groups/<int:pk>/', views.group_detail, name='group_detail'),
+    path('groups/<int:pk>/delete/', views.group_delete, name='group_delete'),
+    path('groups/<int:pk>/edit/', views.edit_teacher, name='edit_teacher'),
 
 ]

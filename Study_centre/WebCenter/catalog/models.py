@@ -64,7 +64,7 @@ class Worker(models.Model):
 
 
 class Student_Subjects(models.Model):
-    student=models.ForeignKey(Student, on_delete=models.CASCADE, verbose_name="Ученик")
+    student=models.ForeignKey(Student, on_delete=models.CASCADE, verbose_name="Ученик", related_name="student_subjects")
     subjects = models.ManyToManyField(Subject,blank=True, null=True,verbose_name="Дисциплины")
     objects = models.Manager()
 
@@ -98,6 +98,9 @@ class Students_in_group(models.Model):
     group=models.ForeignKey(Group, on_delete=models.CASCADE, verbose_name="Группа")
     student=models.ManyToManyField(Student,blank=True, null=True,verbose_name="Ученики")
     objects = models.Manager()
+
+    def __str__(self):
+        return f"{self.group} - {', '.join(str(stud) for stud in self.student.all())}"
 
 
 

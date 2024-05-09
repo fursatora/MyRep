@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<div class="col-md-8 col-lg-9 content-container" style="background-color: #ccdbf6">
+    <h1 class="h3 text-center mt-3">Редактирование группы</h1>
+    <h2 class="lead text-center"></h2>
+    <hr class="mb-5">
+    <section>
+        <h1>Группа</h1>
+        <h3>Изменить преподавателя</h3>
+        <div class="form-group p-2">
+            <form method="POST" class="d-block p-2">
+                {% csrf_token %}
+                <label>Преподаватель:</label><br>
+                {% for teacher in teachers %}
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="teacher" id="teacher_{{ teacher.id }}" value="{{ teacher.id }}">
+                        <label class="form-check-label" for="teacher_{{ teacher.id }}">
+                            {{ teacher.firstname }} {{ teacher.fathername }} {{ teacher.lastname }}
+                        </label>
+                    </div>
+                {% endfor %}
+                <div>
+                    <button type="submit" class="save btn btn-primary">Сохранить</button>
+                    <a class="btn btn-secondary" href="{% url 'groups' %}">Отмена</a>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+{% endblock content %}

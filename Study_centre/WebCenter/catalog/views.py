@@ -133,7 +133,7 @@ def worker_delete(request, pk):
 def group_detail(request, pk):
     group = get_object_or_404(Group, pk=pk)
     students_in_group, created = Students_in_group.objects.get_or_create(group=group)
-    return render(request, 'group/group_details.html', {'group': group, 'student': students_in_group})
+    return render(request, 'group/group_details.html', {'group': group, 'students': students_in_group})
 
 def group_new(request):
     if request.method == "POST":
@@ -142,35 +142,91 @@ def group_new(request):
             group = form.save(commit=False)
             group.created = False
             group.save()
-            return redirect('select_teacher', group_id=group.id)
+            return redirect('select_teacher', pk=group.id)
     else:
         form = GroupForm()
     return render(request, 'group/group_form.html', {'group_form': form})
 
-def select_teacher(request, group_id):
-    group = get_object_or_404(Group, pk=group_id, created=False)
+def group_delete(request, pk):
+    try:
+        group = Group.objects.get(pk=pk)
+        group.delete()
+        return redirect('groups')
+    except Student.DoesNotExist:
+        return HttpResponseNotFound("<h2>Группа не найдена</h2>")
+
+def select_teacher(request, pk):
+    group = get_object_or_404(Group, pk=pk, created=False)
     subject = group.subject
     if request.method == 'POST':
         form = GroupTeacherForm(request.POST, instance=group)
         if form.is_valid():
             form.save()
-            return redirect('add_student_in_group', group_id=group.id)
+            return redirect('add_student_in_group', pk=pk)
     else:
         teachers = Worker.objects.filter(subject=subject)
         form = GroupTeacherForm(instance=group)
     return render(request, 'group/select_teacher_form.html', {'select_teacher_form': form, 'teachers': teachers})
 
-def add_student_in_group(request, group_id):
-    group = get_object_or_404(Group, pk=group_id)
+def edit_teacher(request, pk):
+    group = get_object_or_404(Group, pk=pk, created=False)
+    subject = group.subject
+    if request.method == 'POST':
+        form = GroupTeacherForm(request.POST, instance=group)
+        if form.is_valid():
+            form.save()
+            return redirect('group_detail', pk=pk)
+    else:
+        teachers = Worker.objects.filter(subject=subject)
+        form = GroupTeacherForm(instance=group)
+    return render(request, 'group/edit_teacher.html', {'select_teacher_form': form, 'teachers': teachers})
+
+"""def add_student_in_group(request, pk):
+    group = get_object_or_404(Group, pk=pk)
+    group_subject = group.subject
+    students_in_group, created = Students_in_group.objects.get_or_create(group=group)
+    if request.method == 'POST':
+        form = StudentsInGroupForm(request.POST, instance=students_in_group)
+        if form.is_valid():
+            form.save()
+            return redirect('group_detail', pk=pk)
+    else:
+        students = Student.objects.filter(student_subjects__subjects=group_subject)
+        form = StudentsInGroupForm(instance=students_in_group)
+        form.fields['student'].queryset = students
+
+    return render(request, 'group/select_student_form.html', {'add_student_form': form, 'group': group, 'students': students})
+"""
+"""def add_student_in_group(request, pk):
+    group = get_object_or_404(Group, pk=pk)
     students, created = Students_in_group.objects.get_or_create(group=group)
+
     if request.method == 'POST':
         form = StudentsInGroupForm(request.POST, instance=students)
         if form.is_valid():
             form.save()
             return redirect('groups')
     else:
-        form = StudentsInGroupForm(instance=students)
+        form = StudentsInGroupForm(instance=students, group=group)
 
     return render(request, 'group/select_student_form.html', {'add_student_form': form, 'group': group})
+"""
+
+def add_student_in_group(request, pk):
+    group = get_object_or_404(Group, pk=pk)
+    group_subject = group.subject
+    students_in_group, created = Students_in_group.objects.get_or_create(group=group)
+    filtered_students = Student.objects.filter(student_subjects__subjects=group_subject).distinct()
+
+    if request.method == 'POST':
+        form = StudentsInGroupForm(request.POST, instance=students_in_group)
+        if form.is_valid():
+            form.save()
+            return redirect('groups')
+    else:
+        form = StudentsInGroupForm(instance=students_in_group)
+        form.fields['student'].queryset = filtered_students
+
+    return render(request, 'group/select_student_form.html', {'add_student_form': form, 'group': group, 'filtered_students': filtered_students})
 
 
