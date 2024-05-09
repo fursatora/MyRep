@@ -6,16 +6,8 @@
         <section>
             <form method="POST" class="d-block p-2">
                 {% csrf_token %}
-                <label>Выберите учащихся:</label><br>
-                <!--{% for student in filtered_students %}
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="student" id="student_{{ student.id }}" value="{{ student.id }}">
-                        <label class="form-check-label" for="student_{{ student.id }}">
-                        {{ student.firstname }} {{ student.lastname }}
-                        </label>
-                    </div>
-                {% endfor %}-->
-                {{ add_student_form.as_p }}
+                <label>Выберите учащихся (не более {{ group.group_capacity }})</label><br>
+                {{ add_student_form.student}}
                 <div>
                     <button type="submit" class="save btn btn-primary">Сохранить</button>
                     <a class="btn btn-secondary" href="{% url 'group_detail' pk=group.pk %}">Отмена</a>

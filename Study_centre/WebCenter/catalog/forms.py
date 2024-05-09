@@ -110,23 +110,6 @@ class GroupTeacherForm(forms.ModelForm):
         labels = {'teacher': "Преподаватель"}
         widgets = {'teacher': forms.RadioSelect()}
 
-"""class StudentsInGroupForm(forms.ModelForm):
-    class Meta:
-        model = Students_in_group
-        fields = ['student']
-        widgets = {
-            'student': forms.CheckboxSelectMultiple(),
-        }"""
-"""class StudentsInGroupForm(forms.ModelForm):
-    student = forms.ModelMultipleChoiceField(
-        queryset=None,
-        widget=forms.CheckboxSelectMultiple,
-    )
-
-    class Meta:
-        model = Students_in_group
-        fields = ['student']"""
-
 class StudentsInGroupForm(forms.ModelForm):
     student = forms.ModelMultipleChoiceField(
         queryset=Student.objects.all(),
@@ -134,11 +117,7 @@ class StudentsInGroupForm(forms.ModelForm):
     )
     class Meta:
         model = Students_in_group
-        fields = '__all__'
-        #fields = ('student',)
-        #labels = {'student': "Ученики"}
-        #widgets = {'student': forms.MultipleChoiceField()}
-
+        fields = []
 
     def __init__(self, *args, **kwargs):
         group = kwargs.pop('group', None)
@@ -153,6 +132,5 @@ class StudentsInGroupForm(forms.ModelForm):
 
 
 
-            #'subject': forms.RadioSelect(attrs={'name': 'subjects'}, choices=subject_choices),
 
 

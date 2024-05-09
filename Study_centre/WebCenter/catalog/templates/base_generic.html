@@ -25,31 +25,26 @@
     <link  href="{% static 'css/font-glyphicons.css' %}" rel="stylesheet">
     <a class="col-md-4 col-lg-3 navbar-brand nav-text"> <h1>StudyCenter</h1> </a>
 
-     <style>
+    <style>
 
-#mytable td, #mytable th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#mytable tr:nth-child(even){background-color: #f2f2f2;}
-
-#mytable tr:hover {background-color: #ddd;}
-
-#mytable th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #80a6e0;
-  color: white;
-}
-p {
-                margin-top: 2em;
-                margin-bottom: 2em;
-               }
-</style>
-
-
+        #mytable td, #mytable th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+        #mytable tr:nth-child(even){background-color: #f2f2f2;}
+        #mytable tr:hover {background-color: #ddd;}
+        #mytable th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #80a6e0;
+          color: white;
+        }
+        p {
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+    </style>
 </head>
 
 
@@ -57,8 +52,8 @@ p {
 
 <body>
      <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4 col-lg-3 navbar-container bg-light">
+        <div class="row content-wrapper">
+            <div class="col-md-4 col-lg-3 navbar-container bg-light" style="background-color: #b4cdf6">
                 <nav class="navbar navbar-expand-md navbar-light" style="background-color: #b4cdf6">
                     <a class="navbar-brand" href="#">Навигация</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
@@ -84,7 +79,7 @@ p {
                     </div>
                 </nav>
             </div>
-           {% block content%}
+            {% block content%}
             {% endblock content %}
 
             {% block extrascripts %}

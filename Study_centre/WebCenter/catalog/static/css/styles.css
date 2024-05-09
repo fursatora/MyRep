@@ -26,6 +26,17 @@
             .navbar-container .navbar-nav {
                 flex-direction: column !important;
             }
+            .content-wrapper {
+            display: flex;
+            flex-direction: column; /* Располагаем элементы вертикально */
+            }
+
+            @media (min-width: 768px) { /* Для средних и больших экранов */
+                .content-wrapper {
+                flex-direction: row; /* Располагаем элементы горизонтально */
+                }
+            }
+
 
         }
 

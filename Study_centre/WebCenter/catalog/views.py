@@ -181,37 +181,6 @@ def edit_teacher(request, pk):
         form = GroupTeacherForm(instance=group)
     return render(request, 'group/edit_teacher.html', {'select_teacher_form': form, 'teachers': teachers})
 
-"""def add_student_in_group(request, pk):
-    group = get_object_or_404(Group, pk=pk)
-    group_subject = group.subject
-    students_in_group, created = Students_in_group.objects.get_or_create(group=group)
-    if request.method == 'POST':
-        form = StudentsInGroupForm(request.POST, instance=students_in_group)
-        if form.is_valid():
-            form.save()
-            return redirect('group_detail', pk=pk)
-    else:
-        students = Student.objects.filter(student_subjects__subjects=group_subject)
-        form = StudentsInGroupForm(instance=students_in_group)
-        form.fields['student'].queryset = students
-
-    return render(request, 'group/select_student_form.html', {'add_student_form': form, 'group': group, 'students': students})
-"""
-"""def add_student_in_group(request, pk):
-    group = get_object_or_404(Group, pk=pk)
-    students, created = Students_in_group.objects.get_or_create(group=group)
-
-    if request.method == 'POST':
-        form = StudentsInGroupForm(request.POST, instance=students)
-        if form.is_valid():
-            form.save()
-            return redirect('groups')
-    else:
-        form = StudentsInGroupForm(instance=students, group=group)
-
-    return render(request, 'group/select_student_form.html', {'add_student_form': form, 'group': group})
-"""
-
 def add_student_in_group(request, pk):
     group = get_object_or_404(Group, pk=pk)
     group_subject = group.subject
@@ -221,10 +190,13 @@ def add_student_in_group(request, pk):
     if request.method == 'POST':
         form = StudentsInGroupForm(request.POST, instance=students_in_group)
         if form.is_valid():
-            form.save()
+            students_in_group.student.set(form.cleaned_data['student'])
+            students_in_group.save()
             return redirect('groups')
     else:
-        form = StudentsInGroupForm(instance=students_in_group)
+        initial_data = {'student': students_in_group.student.all()}  # Передаем список студентов
+        form = StudentsInGroupForm(initial=initial_data)
+        #form = StudentsInGroupForm(instance=students_in_group)
         form.fields['student'].queryset = filtered_students
 
     return render(request, 'group/select_student_form.html', {'add_student_form': form, 'group': group, 'filtered_students': filtered_students})

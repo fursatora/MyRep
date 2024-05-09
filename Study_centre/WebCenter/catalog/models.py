@@ -99,6 +99,8 @@ class Students_in_group(models.Model):
     student=models.ManyToManyField(Student,blank=True, null=True,verbose_name="Ученики")
     objects = models.Manager()
 
+
+
     def __str__(self):
         return f"{self.group} - {', '.join(str(stud) for stud in self.student.all())}"
 
