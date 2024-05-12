@@ -36,6 +36,16 @@
                 flex-direction: row; /* Располагаем элементы горизонтально */
                 }
             }
+            .custom {
+                border-radius: 20px;
+            }
+            .labels {
+  font-size: 1.3rem;
+}
+
+            .form-group label {
+    display: block;
+}
 
 
         }

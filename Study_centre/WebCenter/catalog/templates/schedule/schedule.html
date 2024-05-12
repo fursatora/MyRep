@@ -1,0 +1,41 @@
+{% extends "base_generic.html" %}
+{% block content%}
+            <div class="col-md-8 col-lg-9 content-container" style="background-color: #ccdbf6">
+                <h1 class="h3 text-center mt-3">Расписание</h1>
+                <h2 class="lead text-center"></h2>
+                <hr class="mb-5">
+                <section >
+                    {% for month, lessons in grouped_lessons.items %}
+                    <h2>{{ month|date:"F Y" }}</h2>
+                    <table id="mytable">
+                        <tr>
+                            <th>Детали</th>
+                            <th>Статус</th>
+                            <th>№ Группы</th>
+                            <th>Дата</th>
+                            <th>Время</th>
+                            <th>Продолжительность</th>
+                        </tr>
+                        {% for lesson in lessons %}
+                        <td></td>
+                        <td></td>
+                        <td>{{ lesson.group.id }}</td>
+                        <td>{{ lesson.date|date:"d E" }}</td>
+                        <td>{{ lesson.start_time|time:"H:i" }}</td>
+                        <td>{{ lesson.duration }} ч</td></tr>
+                        {% endfor %}
+                    </table>
+                    <!--<ul>
+                        {% for lesson in lessons %}
+                            <li>
+                                {{ lesson.date|date:"d E" }} - {{ lesson.start_time|time:"H:i" }}
+
+                                ({{ lesson.group.name }})
+                                - {{ lesson.duration }} ч
+                            </li>
+                        {% endfor %}
+                    </ul>-->
+                {% endfor %}
+                </section>
+            </div>
+{% endblock content %}

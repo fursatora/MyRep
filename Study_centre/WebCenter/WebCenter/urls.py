@@ -44,4 +44,7 @@ urlpatterns = [
     path('groups/<int:pk>/delete/', views.group_delete, name='group_delete'),
     path('groups/<int:pk>/edit/', views.edit_teacher, name='edit_teacher'),
 
+    path('groups/<int:pk>/lesson/new/', views.lesson_new, name='lesson_new'),
+
+
 ]

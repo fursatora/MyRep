@@ -1,22 +1,65 @@
 {% extends "base_generic.html" %}
-{% block content%}
-<div class="col-md-8 col-lg-9 content-container" style="background-color: #ccdbf6" xmlns="http://www.w3.org/1999/html">
-                <h1 class="h3 text-center mt-3">Добавление/редактирование ученика</h1>
-                <h2 class="lead text-center"></h2>
-                <hr class="mb-5">
-                <section >
-                    <h1>Ученик</h1>
-                    <div class="form-group p-2">
-                        <form method="POST" class="d-block p-2">{% csrf_token %}
-                       {% for field in form %}
-                                <div>
-                                    {{field.label_tag}}
-                                     <div>{{field}}</div>
-                                </div>
-                            {% endfor %}
-                    </div>
-                    <button type="submit" class="save btn btn-primary">Сохранить</button>
-                    <a class="btn btn-secondary" href="{% url 'students' %}">Отмена</a>
-                </section>
+{% load widget_tweaks %}
+{% block content %}
+<style>
+    .form-group label {
+        display: block;
+    }
+</style>
+
+<div class="col-md-8 col-lg-9 content-container" style="background-color: #ccdbf6">
+    <h1 class="h3 text-center mt-3">Добавление/редактирование ученика</h1>
+    <hr class="mb-5">
+    <section>
+        <h1>Ученик</h1>
+        <form method="POST" class="d-block p-2">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    {{ form.lastname.label_tag }}
+                    {{ form.lastname|add_class:"form-control"}}
+                </div>
+                <div class="form-group col-md-3">
+                    {{ form.firstname.label_tag }}
+                    {{ form.firstname|add_class:"form-control" }}
+                </div>
+                <div class="form-group col-md-3">
+                    {{ form.fathername.label_tag }}
+                    {{ form.fathername|add_class:"form-control" }}
+                </div>
             </div>
+            
+            <div class="form-group col-md-3">
+                {{ form.date_of_birth.label_tag }}
+                {{ form.date_of_birth|add_class:"form-control"}}
+            </div>
+            <div class="form-group col-md-3.1">
+                {{ form.grade.label_tag }}
+                {{ form.grade|add_class:"form-control" }}
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    {{ form.phone_number.label_tag }}
+                    {{ form.phone_number|add_class:"form-control" }}
+                </div>
+                <div class="form-group col-md-3">
+                    {{ form.email.label_tag }}
+                    {{ form.email|add_class:"form-control" }}
+                </div>
+            </div>
+            <button type="submit" class="save btn btn-primary">Сохранить</button>
+            <a class="btn btn-secondary" href="{% url 'students' %}">Отмена</a>
+        </form>
+    </section>
+</div>
+
+<script>
+$(function() {
+    $("#id_date_of_birth").datepicker({
+        format: "yyyy-mm-dd",
+        autoclose: true
+    });
+});
+</script>
 {% endblock content %}

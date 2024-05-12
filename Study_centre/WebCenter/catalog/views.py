@@ -22,9 +22,12 @@ from .forms import GroupTeacherForm
 from .forms import StudentsInGroupForm
 from .models import Students_in_group
 
+from .forms import LessonForm
+from .models import Lesson
 
 from django.shortcuts import redirect
-
+from itertools import groupby
+from django.utils.timezone import localtime
 
 def index(request):
     return render(request, "index.html")
@@ -32,7 +35,12 @@ def groups(request):
     groups = Group.objects.all()
     return render(request, "group/groups.html", {"groups": groups})
 def schedule(request):
-    return render(request, "schedule.html")
+    lessons = Lesson.objects.all().order_by('date', 'start_time')
+    grouped_lessons = {}
+    for k, g in groupby(lessons, lambda l: l.date.replace(day=1)):  # Используйте l.date вместо localtime(l.date)
+        grouped_lessons[k] = list(g)
+    return render(request, 'schedule/schedule.html', {'grouped_lessons': grouped_lessons})
+
 def students(request):
     students= Student.objects.all()
     return render(request, "student/students.html", {"students": students})
@@ -194,11 +202,23 @@ def add_student_in_group(request, pk):
             students_in_group.save()
             return redirect('groups')
     else:
-        initial_data = {'student': students_in_group.student.all()}  # Передаем список студентов
+        initial_data = {'student': students_in_group.student.all()}
         form = StudentsInGroupForm(initial=initial_data)
-        #form = StudentsInGroupForm(instance=students_in_group)
         form.fields['student'].queryset = filtered_students
 
     return render(request, 'group/select_student_form.html', {'add_student_form': form, 'group': group, 'filtered_students': filtered_students})
 
+def lesson_new(request, pk):
+    group = get_object_or_404(Group, pk=pk)
+    form = LessonForm()
+    if request.method == "POST":
+        form = LessonForm(request.POST)
+        if form.is_valid():
+            lesson = form.save(commit=False)
+            lesson.group = group
+            lesson.save()
+            return redirect('schedule')
+    else:
+        form = LessonForm()
+    return render(request, 'schedule/new_lesson.html', {'lesson_form': form, 'group': group})
 

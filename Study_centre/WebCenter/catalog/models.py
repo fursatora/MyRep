@@ -99,31 +99,35 @@ class Students_in_group(models.Model):
     student=models.ManyToManyField(Student,blank=True, null=True,verbose_name="Ученики")
     objects = models.Manager()
 
-
-
     def __str__(self):
         return f"{self.group} - {', '.join(str(stud) for stud in self.student.all())}"
 
-
-
-class Group_type_of_math_exam(models.Model):
-    class ExamType(models.TextChoices):
-        BASE = 'Базовый', 'Базовый'
-        PROF = 'Профильный', 'Профильный'
-
-    group = models.ForeignKey(Group, on_delete=models.CASCADE, verbose_name="Группа")
-    type = models.CharField(
-        max_length=11,
-        choices=ExamType.choices,
-        verbose_name="Тип экзамена",
-    )
+class Lesson(models.Model):
+    date = models.DateField()
+    start_time = models.DateTimeField()
+    duration = models.IntegerField()
+    group = models.ForeignKey(Group, on_delete=models.CASCADE)
     objects = models.Manager()
 
-    def clean(self):
-        if self.type not in [choice[0] for choice in self.ExamType.choices]:
-            raise ValidationError(f"Invalid exam type. Must be one of {', '.join(choice[0] for choice in self.ExamType.choices)}")
+class LessonStatus(models.Model):
+    lesson=models.ForeignKey(Lesson, on_delete=models.CASCADE)
+    status=models.IntegerField()
+    objects = models.Manager()
 
-    def save(self, *args, **kwargs):
-        if self.group.subject != 'математика' and self.group.type != 'ЕГЭ':
-            raise ValidationError("Group's subject must be 'математика' to save in this table.")
-        super().save(*args, **kwargs)
+class StudentsAttendance(models.Model):
+    lesson=models.ForeignKey(Lesson, on_delete=models.CASCADE)
+    student=models.ManyToManyField(Students_in_group)
+    objects = models.Manager()
+
+class LessonDetails(models.Model):
+    lesson=models.ForeignKey(Lesson, on_delete=models.CASCADE)
+    topic=models.TextField(max_length=100)
+    homework=models.TextField(max_length=300)
+    notes=models.TextField(max_length=300)
+    objects = models.Manager()
+
+
+
+
+
+

@@ -5,22 +5,22 @@ from .models import Subject
 from .models import Student_Subjects
 from .models import Group
 from .models import Type
-
 from .models import Students_in_group
-
-
+from .models import Lesson
+from datetime import time
+from datetime import datetime, timedelta
 
 class StudentForm(forms.ModelForm):
     required_css_class = "field"
+    date_of_birth = forms.DateField(label="Дата рождения", widget=forms.DateInput(attrs={'type': 'date'}))
+    grade = forms.CharField(label="Класс",widget=forms.Select(choices=[(i, str(i)) for i in range(1, 12)]))
     class Meta:
         model = Student
-        fields=('lastname', 'firstname','fathername','date_of_birth','grade','phone_number','email',)
+        fields=['lastname', 'firstname','fathername','date_of_birth','grade','phone_number','email',]
         labels ={
             'firstname': "Имя",
             'lastname': "Фамилия",
             'fathername': "Отчество",
-            'date_of_birth': "Дата рождения",
-            'grade': "Класс",
             'phone_number': "Номер телефона",
             'email': "E-mail",
         }
@@ -30,6 +30,7 @@ class StudentForm(forms.ModelForm):
             'fathername': forms.TextInput(attrs={'placeholder': 'отчество',}),
             'grade': forms.NumberInput(attrs={'placeholder': 'от 1 до 11'}),
             'phone_number': forms.TextInput(attrs={'placeholder': '8'}),
+            'email': forms.TextInput(attrs={'placeholder': 'example@gmail.com'}),
         }
 
 
@@ -67,6 +68,9 @@ class StudentSubjectsForm(forms.ModelForm):
         fields = ['subjects']
         widgets = {
             'subjects': forms.CheckboxSelectMultiple(),
+        }
+        labels = {
+            'subjects': "Выберите предпочитаемые дисциплины:"
         }
 
 class GroupForm(forms.ModelForm):
@@ -122,13 +126,38 @@ class StudentsInGroupForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         group = kwargs.pop('group', None)
         super().__init__(*args, **kwargs)
-
         if group:
             group_subject = group.subject
             student_ids = Student_Subjects.objects.filter(subjects=group_subject).values_list('student_id', flat=True)
             self.fields['student'].queryset = self.fields['student'].queryset.filter(id__in=student_ids)
-
             self.fields['student'].widget = forms.CheckboxSelectMultiple()
+
+class LessonForm(forms.ModelForm):
+    date = forms.DateField(label="Дата занятия", widget=forms.DateInput(attrs={'type': 'date'}))
+    times = [(time(hour=i).strftime('%H:%M'),
+              time(hour=i).strftime('%H:%M')) for i in range(8, 23)]
+    start_time = forms.ChoiceField(choices=times, label="Начало занятия")
+
+    class Meta:
+        model = Lesson
+        fields = ['date', 'start_time', 'duration']
+        widgets = {
+            'duration': forms.RadioSelect(choices=((1, '1 час'), (2, '2 часа')))
+        }
+        labels = {
+            'duration': "Продолжительность",
+        }
+
+    def clean(self):
+        cleaned_data = super().clean()
+        date = cleaned_data.get('date')
+        start_time_str = cleaned_data.get('start_time')
+    
+        if date and start_time_str:
+            hour, minute = map(int, start_time_str.split(':'))
+            cleaned_data['start_time'] = datetime.combine(date, time(hour, minute))
+        return cleaned_data
+
 
 
 

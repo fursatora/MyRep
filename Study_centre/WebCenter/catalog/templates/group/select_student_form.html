@@ -6,14 +6,13 @@
         <section>
             <form method="POST" class="d-block p-2">
                 {% csrf_token %}
-                <label>Выберите учащихся (не более {{ group.group_capacity }})</label><br>
+                <label>Выберите учащихся (не более {{ group.group_capacity }})</label>
                 {{ add_student_form.student}}
                 <div>
                     <button type="submit" class="save btn btn-primary">Сохранить</button>
                     <a class="btn btn-secondary" href="{% url 'group_detail' pk=group.pk %}">Отмена</a>
                 </div>
             </form>
-
         </section>
     </div>
 {% endblock content %}
