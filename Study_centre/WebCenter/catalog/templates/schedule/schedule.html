@@ -17,24 +17,16 @@
                             <th>Продолжительность</th>
                         </tr>
                         {% for lesson in lessons %}
-                        <td></td>
-                        <td></td>
-                        <td>{{ lesson.group.id }}</td>
-                        <td>{{ lesson.date|date:"d E" }}</td>
-                        <td>{{ lesson.start_time|time:"H:i" }}</td>
-                        <td>{{ lesson.duration }} ч</td></tr>
+                        <tr>
+                            <td class="text-center"><a class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a></td>
+
+                            <td></td>
+                            <td>{{ lesson.group.id }}</td>
+                            <td>{{ lesson.date|date:"d E" }}</td>
+                            <td>{{ lesson.start_time|time:"H:i" }}</td>
+                            <td>{{ lesson.duration }} ч</td></tr>
                         {% endfor %}
                     </table>
-                    <!--<ul>
-                        {% for lesson in lessons %}
-                            <li>
-                                {{ lesson.date|date:"d E" }} - {{ lesson.start_time|time:"H:i" }}
-
-                                ({{ lesson.group.name }})
-                                - {{ lesson.duration }} ч
-                            </li>
-                        {% endfor %}
-                    </ul>-->
                 {% endfor %}
                 </section>
             </div>

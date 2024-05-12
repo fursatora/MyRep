@@ -109,11 +109,6 @@ class Lesson(models.Model):
     group = models.ForeignKey(Group, on_delete=models.CASCADE)
     objects = models.Manager()
 
-class LessonStatus(models.Model):
-    lesson=models.ForeignKey(Lesson, on_delete=models.CASCADE)
-    status=models.IntegerField()
-    objects = models.Manager()
-
 class StudentsAttendance(models.Model):
     lesson=models.ForeignKey(Lesson, on_delete=models.CASCADE)
     student=models.ManyToManyField(Students_in_group)
@@ -121,6 +116,7 @@ class StudentsAttendance(models.Model):
 
 class LessonDetails(models.Model):
     lesson=models.ForeignKey(Lesson, on_delete=models.CASCADE)
+    status=models.IntegerField()
     topic=models.TextField(max_length=100)
     homework=models.TextField(max_length=300)
     notes=models.TextField(max_length=300)
