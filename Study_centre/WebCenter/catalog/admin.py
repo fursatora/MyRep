@@ -5,10 +5,16 @@ from .models import Type
 from .models import Worker
 from .models import Student_Subjects
 from .models import Group
+from .models import Students_in_group
+from .models import Lesson
 
 
 @admin.register(Subject)
 class SubjectAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Lesson)
+class LessonAdmin(admin.ModelAdmin):
     pass
 
 @admin.register(Type)

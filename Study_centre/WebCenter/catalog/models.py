@@ -12,14 +12,12 @@ class Subject(models.Model):
     def __str__(self):
         return self.name
 
-
 class Type(models.Model):
     name=models.CharField(max_length=100)
     objects=models.Manager()
 
     def __str__(self):
         return self.name
-
 
 class Student(models.Model):
     firstname=models.CharField(max_length=20, verbose_name="Имя")
@@ -116,10 +114,10 @@ class StudentsAttendance(models.Model):
 
 class LessonDetails(models.Model):
     lesson=models.ForeignKey(Lesson, on_delete=models.CASCADE)
-    status=models.IntegerField()
-    topic=models.TextField(max_length=100)
-    homework=models.TextField(max_length=300)
-    notes=models.TextField(max_length=300)
+    status=models.IntegerField(default=3)
+    topic=models.TextField(null=True, default="нет", max_length=100)
+    homework=models.TextField(null=True, default="нет", max_length=300)
+    notes=models.TextField(null=True, default="нет", max_length=300)
     objects = models.Manager()
 
 

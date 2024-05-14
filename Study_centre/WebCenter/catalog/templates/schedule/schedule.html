@@ -18,8 +18,7 @@
                         </tr>
                         {% for lesson in lessons %}
                         <tr>
-                            <td class="text-center"><a class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a></td>
-
+                            <td class="text-center"><a href="{% url 'lesson_details' lesson_id=lesson.id %}" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a></td>
                             <td></td>
                             <td>{{ lesson.group.id }}</td>
                             <td>{{ lesson.date|date:"d E" }}</td>

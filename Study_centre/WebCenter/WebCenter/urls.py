@@ -45,6 +45,6 @@ urlpatterns = [
     path('groups/<int:pk>/edit/', views.edit_teacher, name='edit_teacher'),
 
     path('groups/<int:pk>/lesson/new/', views.lesson_new, name='lesson_new'),
-
+    path('schedule/<int:lesson_id>/', views.lesson_details, name='lesson_details'),
 
 ]

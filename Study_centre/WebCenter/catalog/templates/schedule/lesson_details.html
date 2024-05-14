@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+{% block content%}
+            <div class="col-md-8 col-lg-9 content-container" style="background-color: #ccdbf6">
+                <h1 class="h3 text-center mt-3">Информация о занятии</h1>
+                <h2 class="lead text-center"></h2>
+                <hr class="mb-5">
+                <section >
+                    <div class="student">
+
+                        <h3> {{ lesson.date|date:"d E" }}</h3>
+                        <h5> {{ lesson.start_time|time:"H:i" }} - {{end_time|time:"H:i"}} </h5>
+                        <p>
+                            <td class="text-center"><a href="{% url 'lesson_details' lesson_id=lesson.id %}" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a><h4>Статус:</h4></td>
+                        </p>
+                    </div>
+                </section>
+            </div>
+{% endblock content %}

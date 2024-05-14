@@ -2,10 +2,11 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
 from django.http import*
 from django.http import JsonResponse
+from datetime import datetime, timedelta
 
 
 from .forms import StudentForm
-from .models import Student
+from .models import Student, LessonDetails
 
 from .forms import WorkerForm
 from .models import Worker
@@ -16,7 +17,7 @@ from .forms import StudentSubjectsForm
 from .models import Student_Subjects
 
 from .forms import GroupForm
-from .forms import Group
+from .models import Group
 from .forms import GroupTeacherForm
 
 from .forms import StudentsInGroupForm
@@ -24,6 +25,11 @@ from .models import Students_in_group
 
 from .forms import LessonForm
 from .models import Lesson
+from .models import LessonDetails
+from .forms import LessonDetailsForm
+
+from .models import StudentsAttendance
+from .forms import StudentsAttendanceForm
 
 from django.shortcuts import redirect
 from itertools import groupby
@@ -221,4 +227,12 @@ def lesson_new(request, pk):
     else:
         form = LessonForm()
     return render(request, 'schedule/new_lesson.html', {'lesson_form': form, 'group': group})
+
+def lesson_details(request, lesson_id):  #, lesson_det_id, student_id
+    lesson = get_object_or_404(Lesson, pk=lesson_id)
+    end_time = (lesson.start_time + timedelta(hours=lesson.duration))
+    #lesson_details = get_object_or_404(LessonDetails, lesson_det=lesson_det_id)
+    #students_on_lesson = get_object_or_404(StudentsAttendance, student=student_id)
+    return render(request, 'schedule/lesson_details.html', {'lesson': lesson, 'end_time': end_time})
+
 
