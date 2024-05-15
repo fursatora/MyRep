@@ -13,8 +13,8 @@
                             <th>Статус</th>
                             <th>№ Группы</th>
                             <th>Дата</th>
-                            <th>Время</th>
-                            <th>Продолжительность</th>
+                            <th>Начало</th>
+                            <th>Конец</th>
                         </tr>
                         {% for lesson in lessons %}
                         <tr>
@@ -36,7 +36,7 @@
                             <td>{{ lesson.group.id }}</td>
                             <td>{{ lesson.date|date:"d E" }}</td>
                             <td>{{ lesson.start_time|time:"H:i" }}</td>
-                            <td>{{ lesson.duration }} ч</td></tr>
+                            <td>{{ lesson.end_time|time:"H:i" }}</td></tr>
                         {% endfor %}
                     </table>
                 {% endfor %}

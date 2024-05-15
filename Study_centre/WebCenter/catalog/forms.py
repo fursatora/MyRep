@@ -12,6 +12,8 @@ from .models import LessonDetails
 from .models import LessonStatus
 from datetime import time
 from datetime import datetime, timedelta
+from django.forms import Widget
+
 
 class StudentForm(forms.ModelForm):
     required_css_class = "field"
@@ -183,8 +185,35 @@ class LessonDetailsForm(forms.ModelForm):
             'notes': forms.Select(attrs={'placeholder': 'не более 300 символов'}),
         }
 
+
+"""class StudentsAttendanceForm(forms.ModelForm):
+    class Meta:
+        model = StudentsAttendance
+        fields = ['student']
+        labels = {
+            'student': "Список присутствующих",
+        }
+        widgets = {
+            'student': forms.CheckboxSelectMultiple(),
+        }
+
+    def __init__(self, *args, **kwargs):
+        lesson = kwargs.pop('lesson', None)
+        super().__init__(*args, *kwargs)
+        self.lesson = kwargs.pop('initial', {}).get('lesson')
+
+        if self.lesson:
+            self.fields['student'].queryset = Student.objects.filter(group=self.lesson.group)"""
 class StudentsAttendanceForm(forms.ModelForm):
-    students=forms.ModelMultipleChoiceField(queryset=Students_in_group.objects.all())
+    def __init__(self, *args, **kwargs):
+        students = kwargs.pop('students', None)
+        super(StudentsAttendanceForm, self).__init__(*args, **kwargs)
+        if students:
+            self.fields['students'].queryset = students
+    """def __init__(self, students, *args, **kwargs):
+        super(StudentsAttendanceForm, self).__init__(*args, **kwargs)
+        self.fields['students'].queryset = students"""
+
     class Meta:
         model = StudentsAttendance
         fields = ['students']
@@ -192,8 +221,12 @@ class StudentsAttendanceForm(forms.ModelForm):
             'students': "Список присутствующих",
         }
         widgets = {
-            'students': forms.Select(),
+            'students': forms.CheckboxSelectMultiple(),
         }
+
+
+
+
 
 
 

@@ -109,7 +109,7 @@ class Lesson(models.Model):
 
 class StudentsAttendance(models.Model):
     lesson=models.ForeignKey(Lesson, on_delete=models.CASCADE)
-    student=models.ManyToManyField(Students_in_group)
+    students=models.ManyToManyField(Student,blank=True, null=True)
     objects = models.Manager()
 
 class LessonStatus(models.Model):

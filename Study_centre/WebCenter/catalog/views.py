@@ -48,6 +48,10 @@ def groups(request):
 def schedule(request):
     lessons = Lesson.objects.all().order_by('date', 'start_time')
     grouped_lessons = {}
+
+    for lesson in lessons:
+        lesson.end_time = lesson.start_time + timedelta(hours=lesson.duration)
+
     for k, g in groupby(lessons, lambda l: l.date.replace(day=1)):
         grouped_lessons[k] = list(g)
         for lesson in grouped_lessons[k]:
@@ -261,19 +265,55 @@ def create_lesson_status(sender, instance, created, **kwargs):
     if created:
         LessonStatus.objects.create(lesson=instance, status=3)
 
-def add_students_to_lesson(request, pk):
+"""def add_students_to_lesson(request, pk):
     lesson = get_object_or_404(Lesson, pk=pk)
     attendance, created = StudentsAttendance.objects.get_or_create(lesson=lesson)
-    form = StudentsAttendanceForm(request.POST or None, instance=attendance)
+    #form = StudentsAttendanceForm(request.POST or None, instance=attendance)
+    form = StudentsAttendanceForm(request.POST or None, instance=attendance, initial={'lesson': lesson})
 
-    if form.is_valid():
-        form.save()
-        return redirect('lesson_details', lesson_id=pk)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('lesson_details', lesson_id=pk)
 
     context = {
         'lesson': lesson,
         'form': form,
     }
-    return render(request, 'schedule/add_students_to_lesson.html', context)
+    return render(request, 'schedule/add_students_to_lesson.html', context)"""
+
+"""def add_students_to_lesson(request, pk):
+    lesson = get_object_or_404(Lesson, pk=pk)
+    #attendance, created = StudentsAttendance.objects.get_or_create(lesson=lesson)    
+    if request.method == 'POST':
+        form = StudentsAttendanceForm(request.POST, instance=attendance, lesson=lesson)
+        if form.is_valid():
+            form.save()
+            return redirect('lesson_details', lesson_id=pk)
+    else:
+        form = StudentsAttendanceForm(lesson=lesson)
+
+    context = {'form': form, 'lesson': lesson}
+    return render(request, 'schedule/add_students_to_lesson.html', context)"""
+
+
+def add_students_to_lesson(request, pk):
+    lesson = Lesson.objects.get(id=pk)
+    group = lesson.group
+    students_in_group = Students_in_group.objects.get(group=group)
+    students = students_in_group.student.all()
+
+    if request.method == 'POST':
+        form = StudentsAttendanceForm(students=students)
+        if form.is_valid():
+            students_attendance = form.save(commit=False)
+            students_attendance.lesson = lesson
+            students_attendance.save()
+            form.save_m2m()
+            return redirect('lesson_details', lesson_id=pk)
+    else:
+        form = StudentsAttendanceForm(students=students)
+
+    return render(request, 'schedule/add_students_to_lesson.html', {'form': form, 'lesson': lesson})
 
 
