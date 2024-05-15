@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+{% load widget_tweaks %}
+
+{% block content %}
+    <div class="col-md-8 col-lg-9 content-container" style="background-color: #ccdbf6">
+        <h1 class="h3 text-center mt-3">Добавление изучаемых дисциплин</h1>
+        <hr class="mb-5">
+        <section>
+            <form method="post" class="form-horizontal">
+                {% csrf_token %}
+                    {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <a class="btn btn-secondary" href="{% url 'lesson_details' lesson_id=lesson.id %}">Отмена</a>
+            </form>
+        </section>
+    </div>
+{% endblock content %}

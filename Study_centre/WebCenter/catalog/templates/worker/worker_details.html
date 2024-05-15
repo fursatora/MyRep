@@ -6,11 +6,7 @@
                 <hr class="mb-5">
                 <section >
                     <div class="worker">
-                        <h1>{{ worker.lastname }} {{worker.firstname}} {{worker.fathername }}
-                            <a class="btn btn-primary" href="{% url 'worker_edit' pk=worker.pk %}"><span class="glyphicon glyphicon-pencil"></span> Изменить</a>
-                            <a class="btn btn-danger" href="{% url 'worker_delete' pk=worker.pk %}"><span class="glyphicon glyphicon-trash"></span> Удалить</a>
-
-                        </h1>
+                        <h1>{{ worker.lastname }} {{worker.firstname}} {{worker.fathername }}</h1>
                         <p>
                             <h4>Преподаваемые дисциплины:
                             {% for subject in worker.subject.all %}
@@ -27,6 +23,9 @@
                             <h5>Номер телефона: {{ worker.phone_number }} </h5>
                             <h5>E-mail: {{ worker.email }} </h5>
                         </p>
+                        <a class="btn btn-primary" href="{% url 'worker_edit' pk=worker.pk %}"><span class="glyphicon glyphicon-pencil"></span> Изменить</a>
+                        <a class="btn btn-danger" href="{% url 'worker_delete' pk=worker.pk %}"><span class="glyphicon glyphicon-trash"></span> Удалить</a>
+
                     </div>
                 </section>
             </div>

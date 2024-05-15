@@ -9,6 +9,7 @@ from .models import Students_in_group
 from .models import Lesson
 from .models import StudentsAttendance
 from .models import LessonDetails
+from .models import LessonStatus
 from datetime import time
 from datetime import datetime, timedelta
 
@@ -160,13 +161,18 @@ class LessonForm(forms.ModelForm):
             cleaned_data['start_time'] = datetime.combine(date, time(hour, minute))
         return cleaned_data
 
-class LessonDetailsForm(forms.ModelForm):
-    status_choices=((0, 'отменено'),(1, 'проведено'),(3, 'не отмечено'))
-    status=forms.RadioSelect(choices=status_choices)
+class LessonStatusForm(forms.ModelForm):
     class Meta:
-        fields=('status', 'topic', 'homework', 'notes')
+        model = LessonStatus
+        fields = ['status']
+        labels = {'status': "Статус",}
+        widgets = {'status': forms.RadioSelect(choices=((0, 'отменено'), (1, 'проведено'), (3, 'не отмечено')))}
+
+class LessonDetailsForm(forms.ModelForm):
+    class Meta:
+        model = LessonDetails
+        fields=('topic', 'homework', 'notes')
         labels ={
-            'status': "Статус",
             'topic': "Тема",
             'homework': "Домашнее задание",
             'notes': "Заметки",
@@ -180,6 +186,7 @@ class LessonDetailsForm(forms.ModelForm):
 class StudentsAttendanceForm(forms.ModelForm):
     students=forms.ModelMultipleChoiceField(queryset=Students_in_group.objects.all())
     class Meta:
+        model = StudentsAttendance
         fields = ['students']
         labels = {
             'students': "Список присутствующих",
@@ -187,7 +194,6 @@ class StudentsAttendanceForm(forms.ModelForm):
         widgets = {
             'students': forms.Select(),
         }
-
 
 
 

@@ -19,7 +19,20 @@
                         {% for lesson in lessons %}
                         <tr>
                             <td class="text-center"><a href="{% url 'lesson_details' lesson_id=lesson.id %}" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a></td>
-                            <td></td>
+                            <td class="text-center">
+                                {% if lesson.status.status == 0 %}
+                                <span class="glyphicon glyphicon-remove-sign"
+                                style="font-size: 1.5em; color: #fc3636;"></span>
+
+                                {% elif lesson.status.status == 1 %}
+                                <span class="glyphicon glyphicon-ok-sign"
+                                style="font-size: 1.5em; color: #32e740;"></span>
+
+                                {% elif lesson.status.status == 3 %}
+                                <span class="glyphicon glyphicon-question-sign"
+                                style="font-size: 1.5em; color: #fce236;"></span>
+                                {% endif %}
+                            </td>
                             <td>{{ lesson.group.id }}</td>
                             <td>{{ lesson.date|date:"d E" }}</td>
                             <td>{{ lesson.start_time|time:"H:i" }}</td>

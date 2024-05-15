@@ -3,7 +3,8 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanen
 from django.http import*
 from django.http import JsonResponse
 from datetime import datetime, timedelta
-
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 from .forms import StudentForm
 from .models import Student, LessonDetails
@@ -27,6 +28,10 @@ from .forms import LessonForm
 from .models import Lesson
 from .models import LessonDetails
 from .forms import LessonDetailsForm
+from .models import LessonStatus
+from .forms import LessonStatusForm
+
+
 
 from .models import StudentsAttendance
 from .forms import StudentsAttendanceForm
@@ -43,8 +48,10 @@ def groups(request):
 def schedule(request):
     lessons = Lesson.objects.all().order_by('date', 'start_time')
     grouped_lessons = {}
-    for k, g in groupby(lessons, lambda l: l.date.replace(day=1)):  # Используйте l.date вместо localtime(l.date)
+    for k, g in groupby(lessons, lambda l: l.date.replace(day=1)):
         grouped_lessons[k] = list(g)
+        for lesson in grouped_lessons[k]:
+            lesson.status = LessonStatus.objects.get(lesson=lesson)
     return render(request, 'schedule/schedule.html', {'grouped_lessons': grouped_lessons})
 
 def students(request):
@@ -230,9 +237,43 @@ def lesson_new(request, pk):
 
 def lesson_details(request, lesson_id):  #, lesson_det_id, student_id
     lesson = get_object_or_404(Lesson, pk=lesson_id)
+    lesson_status = get_object_or_404(LessonStatus, lesson=lesson)
     end_time = (lesson.start_time + timedelta(hours=lesson.duration))
     #lesson_details = get_object_or_404(LessonDetails, lesson_det=lesson_det_id)
     #students_on_lesson = get_object_or_404(StudentsAttendance, student=student_id)
-    return render(request, 'schedule/lesson_details.html', {'lesson': lesson, 'end_time': end_time})
+    return render(request, 'schedule/lesson_details.html', {'lesson': lesson,  'lesson_status': lesson_status, 'end_time': end_time})
+
+def add_status_to_lesson(request, pk):
+    lesson = get_object_or_404(Lesson, pk=pk)
+    lesson_status, created = LessonStatus.objects.get_or_create(lesson=lesson)
+    if request.method == 'POST':
+        form = LessonStatusForm(request.POST, instance=lesson_status)
+        if form.is_valid():
+            form.save()
+            return redirect('lesson_details', lesson_id=lesson.id)
+    else:
+        form = LessonStatusForm(instance=lesson_status)
+
+    return render(request, 'schedule/add_status_form.html', {'form': form, 'lesson': lesson})
+
+@receiver(post_save, sender=Lesson)
+def create_lesson_status(sender, instance, created, **kwargs):
+    if created:
+        LessonStatus.objects.create(lesson=instance, status=3)
+
+def add_students_to_lesson(request, pk):
+    lesson = get_object_or_404(Lesson, pk=pk)
+    attendance, created = StudentsAttendance.objects.get_or_create(lesson=lesson)
+    form = StudentsAttendanceForm(request.POST or None, instance=attendance)
+
+    if form.is_valid():
+        form.save()
+        return redirect('lesson_details', lesson_id=pk)
+
+    context = {
+        'lesson': lesson,
+        'form': form,
+    }
+    return render(request, 'schedule/add_students_to_lesson.html', context)
 
 

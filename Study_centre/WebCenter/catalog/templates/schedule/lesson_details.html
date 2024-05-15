@@ -9,9 +9,31 @@
 
                         <h3> {{ lesson.date|date:"d E" }}</h3>
                         <h5> {{ lesson.start_time|time:"H:i" }} - {{end_time|time:"H:i"}} </h5>
-                        <p>
-                            <td class="text-center"><a href="{% url 'lesson_details' lesson_id=lesson.id %}" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a><h4>Статус:</h4></td>
-                        </p>
+                        <p><h5>
+                            <td class="text-center">
+                                <a href="{% url 'add_status_to_lesson' pk=lesson.id %}" class="top-menu">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </a>
+                            Статус:
+                            {% if lesson_status.status == 0 %} отменено
+                            {% elif lesson_status.status == 1 %} проведено
+                            {% elif lesson_status.status == 3 %} не отмечено
+                            {% endif %}
+                                <p>
+                                    <a class="btn btn-success" href="{% url 'add_students_to_lesson' pk=lesson.id %}">
+                                        <span class="glyphicon glyphicon-plus-sign"></span> Отметить студентов</a>
+                                </p>
+
+                                <h3>Отмеченные студенты:</h3>
+                                <ul>
+                                    {% for attendance in lesson.studentsattendance_set.all %}
+                                    {% for student in attendance.student.all %}
+                                    <li>{{ student.student.user.last_name }} {{ student.student.user.first_name }}</li>
+                                    {% endfor %}
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                        </h5></p>
                     </div>
                 </section>
             </div>
