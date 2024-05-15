@@ -205,15 +205,6 @@ class LessonDetailsForm(forms.ModelForm):
         if self.lesson:
             self.fields['student'].queryset = Student.objects.filter(group=self.lesson.group)"""
 class StudentsAttendanceForm(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
-        students = kwargs.pop('students', None)
-        super(StudentsAttendanceForm, self).__init__(*args, **kwargs)
-        if students:
-            self.fields['students'].queryset = students
-    """def __init__(self, students, *args, **kwargs):
-        super(StudentsAttendanceForm, self).__init__(*args, **kwargs)
-        self.fields['students'].queryset = students"""
-
     class Meta:
         model = StudentsAttendance
         fields = ['students']
@@ -224,11 +215,11 @@ class StudentsAttendanceForm(forms.ModelForm):
             'students': forms.CheckboxSelectMultiple(),
         }
 
-
-
-
-
-
+    def __init__(self, *args, **kwargs):
+        lesson = kwargs.pop('lesson', None)
+        super(StudentsAttendanceForm, self).__init__(*args, *kwargs)
+        if lesson is not None:
+            self.fields['students'].queryset = lesson.group.students_in_group_set.first().student.all()
 
 
 

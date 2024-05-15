@@ -30,6 +30,7 @@ from .models import LessonDetails
 from .forms import LessonDetailsForm
 from .models import LessonStatus
 from .forms import LessonStatusForm
+from django.views import View
 
 
 
@@ -243,9 +244,11 @@ def lesson_details(request, lesson_id):  #, lesson_det_id, student_id
     lesson = get_object_or_404(Lesson, pk=lesson_id)
     lesson_status = get_object_or_404(LessonStatus, lesson=lesson)
     end_time = (lesson.start_time + timedelta(hours=lesson.duration))
+
+
     #lesson_details = get_object_or_404(LessonDetails, lesson_det=lesson_det_id)
     #students_on_lesson = get_object_or_404(StudentsAttendance, student=student_id)
-    return render(request, 'schedule/lesson_details.html', {'lesson': lesson,  'lesson_status': lesson_status, 'end_time': end_time})
+    return render(request, 'schedule/lesson_details.html', { 'lesson': lesson,  'lesson_status': lesson_status, 'end_time': end_time})
 
 def add_status_to_lesson(request, pk):
     lesson = get_object_or_404(Lesson, pk=pk)
@@ -265,55 +268,23 @@ def create_lesson_status(sender, instance, created, **kwargs):
     if created:
         LessonStatus.objects.create(lesson=instance, status=3)
 
-"""def add_students_to_lesson(request, pk):
-    lesson = get_object_or_404(Lesson, pk=pk)
-    attendance, created = StudentsAttendance.objects.get_or_create(lesson=lesson)
-    #form = StudentsAttendanceForm(request.POST or None, instance=attendance)
-    form = StudentsAttendanceForm(request.POST or None, instance=attendance, initial={'lesson': lesson})
-
-    if request.method == 'POST':
-        if form.is_valid():
-            form.save()
-            return redirect('lesson_details', lesson_id=pk)
-
-    context = {
-        'lesson': lesson,
-        'form': form,
-    }
-    return render(request, 'schedule/add_students_to_lesson.html', context)"""
-
-"""def add_students_to_lesson(request, pk):
-    lesson = get_object_or_404(Lesson, pk=pk)
-    #attendance, created = StudentsAttendance.objects.get_or_create(lesson=lesson)    
-    if request.method == 'POST':
-        form = StudentsAttendanceForm(request.POST, instance=attendance, lesson=lesson)
-        if form.is_valid():
-            form.save()
-            return redirect('lesson_details', lesson_id=pk)
-    else:
-        form = StudentsAttendanceForm(lesson=lesson)
-
-    context = {'form': form, 'lesson': lesson}
-    return render(request, 'schedule/add_students_to_lesson.html', context)"""
-
 
 def add_students_to_lesson(request, pk):
-    lesson = Lesson.objects.get(id=pk)
-    group = lesson.group
-    students_in_group = Students_in_group.objects.get(group=group)
-    students = students_in_group.student.all()
-
-    if request.method == 'POST':
-        form = StudentsAttendanceForm(students=students)
+    lesson = get_object_or_404(Lesson, pk=pk)
+    if request.method == 'GET':
+        form = StudentsAttendanceForm(lesson=lesson)
+        return render(request, 'schedule/add_students_to_lesson.html', {
+            'form': form,
+            'lesson': lesson
+        })
+    elif request.method == 'POST':
+        form = StudentsAttendanceForm(request.POST, lesson=lesson)
         if form.is_valid():
             students_attendance = form.save(commit=False)
             students_attendance.lesson = lesson
             students_attendance.save()
             form.save_m2m()
             return redirect('lesson_details', lesson_id=pk)
-    else:
-        form = StudentsAttendanceForm(students=students)
-
-    return render(request, 'schedule/add_students_to_lesson.html', {'form': form, 'lesson': lesson})
-
-
+        return render(request, 'schedule/add_students_to_lesson.html', {
+            'form': form,
+            'lesson': lesson})

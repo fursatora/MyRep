@@ -25,13 +25,9 @@
                                 </p>
 
                                 <h3>Отмеченные студенты:</h3>
-                                <ul>
-                                    {% for attendance in lesson.studentsattendance_set.all %}
-                                    {% for student in attendance.student.all %}
-                                    <li>{{ student.student.user.last_name }} {{ student.student.user.first_name }}</li>
-                                    {% endfor %}
-                                    {% endfor %}
-                                </ul>
+                                {% for student in students %}
+            <li>{{ student.firstname }} {{ student.lastname }}</li>
+        {% endfor %}
                             </td>
                         </h5></p>
                     </div>

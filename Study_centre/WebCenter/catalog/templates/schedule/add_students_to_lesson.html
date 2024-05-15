@@ -8,8 +8,7 @@
         <section>
             <form method="post" class="form-horizontal">
                 {% csrf_token %}
-                <label>Список присутствующих: </label>
-                {{ form.student}}
+                {{ form.as_p }}
                 <button type="submit" class="btn btn-primary">Сохранить</button>
                 <a class="btn btn-secondary" href="{% url 'lesson_details' lesson_id=lesson.id %}">Отмена</a>
             </form>
