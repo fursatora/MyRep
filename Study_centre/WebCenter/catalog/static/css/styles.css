@@ -40,14 +40,19 @@
                 border-radius: 20px;
             }
             .labels {
-  font-size: 1.3rem;
-}
+                font-size: 1.3rem;
+            }
 
             .form-group label {
-    display: block;
+                display: block;
+            }
+            .two-column-radio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /*  Два столбца одинаковой ширины */
+  gap: 10px; /* Промежуток между столбцами */
 }
 
 
-        }
+}
 
 

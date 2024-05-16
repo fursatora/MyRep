@@ -106,7 +106,7 @@ class GroupForm(forms.ModelForm):
         widgets = {
             'grade': forms.Select(attrs={'placeholder': 'от 1 до 11'},choices=grade_choices),
             'group_capacity': forms.Select(attrs={'placeholder': 'от 1 до 8'}, choices=capacity_choices),
-            'subject': forms.RadioSelect(attrs={'placeholder': 'выберите дисциплину'}),
+            'subject': forms.RadioSelect(attrs={'placeholder': 'выберите дисциплину', 'class': 'two-column-radio'}),
             'type': forms.RadioSelect(attrs={'placeholder': 'выберите тип занятий'}),
         }
 
@@ -185,25 +185,6 @@ class LessonDetailsForm(forms.ModelForm):
             'notes': forms.Select(attrs={'placeholder': 'не более 300 символов'}),
         }
 
-
-"""class StudentsAttendanceForm(forms.ModelForm):
-    class Meta:
-        model = StudentsAttendance
-        fields = ['student']
-        labels = {
-            'student': "Список присутствующих",
-        }
-        widgets = {
-            'student': forms.CheckboxSelectMultiple(),
-        }
-
-    def __init__(self, *args, **kwargs):
-        lesson = kwargs.pop('lesson', None)
-        super().__init__(*args, *kwargs)
-        self.lesson = kwargs.pop('initial', {}).get('lesson')
-
-        if self.lesson:
-            self.fields['student'].queryset = Student.objects.filter(group=self.lesson.group)"""
 class StudentsAttendanceForm(forms.ModelForm):
     class Meta:
         model = StudentsAttendance
@@ -215,11 +196,7 @@ class StudentsAttendanceForm(forms.ModelForm):
             'students': forms.CheckboxSelectMultiple(),
         }
 
-    def __init__(self, *args, **kwargs):
-        lesson = kwargs.pop('lesson', None)
-        super(StudentsAttendanceForm, self).__init__(*args, *kwargs)
-        if lesson is not None:
-            self.fields['students'].queryset = lesson.group.students_in_group_set.first().student.all()
+
 
 
 

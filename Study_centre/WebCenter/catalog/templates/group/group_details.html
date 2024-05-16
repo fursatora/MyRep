@@ -6,23 +6,25 @@
                 <hr class="mb-5">
                 <section >
                     <div class="group">
-                        <h1>
-                            <a class="btn btn-primary" href="{% url 'edit_teacher' pk=group.pk %}"><span class="glyphicon glyphicon-pencil"></span> Изменить преподавателя</a>
-                            <a class="btn btn-danger" href="{% url 'group_delete' pk=group.pk %}"><span class="glyphicon glyphicon-trash"></span> Удалить</a>
-                            <a class="btn btn-primary" href="{% url 'add_student_in_group' pk=group.pk %}"><span class="glyphicon glyphicon-pencil"></span> Изменить учащихся</a>
-                        </h1>
+                        <h3>Группа № {{ group.id }}</h3>
                         <h5>Класс: {{ group.grade }}</h5>
                         <h5>Дисциплина: {{ group.subject }}</h5>
                         <h5>Программа: {{ group.type }}</h5>
                         <h5>Преподаватель: {{ group.teacher.lastname }} {{ group.teacher.firstname }} {{ group.teacher.fathername }}</h5>
 
                         <p>
-                            <h4>Список учащихся:
+                            <h4>Список учащихся:</h4>
                             {% for student in students.student.all %}
-                                <li>{{ student }}</li>
+                            <h5><li>{{ student }}</li></h5>
                             {% endfor %}
-                             </h4>
                         </p>
+
+                        <h1>
+                            <a class="btn btn-primary" href="{% url 'edit_teacher' pk=group.pk %}"><span class="glyphicon glyphicon-pencil"></span> Изменить преподавателя</a>
+                            <a class="btn btn-primary" href="{% url 'add_student_in_group' pk=group.pk %}"><span class="glyphicon glyphicon-pencil"></span> Изменить учащихся</a>
+                        </h1>
+                        <a class="btn btn-danger" href="{% url 'group_delete' pk=group.pk %}"><span class="glyphicon glyphicon-trash"></span> Удалить</a>
+
                         <a class="btn btn-success" href="{% url 'lesson_new' pk=group.id %}"><span class="glyphicon glyphicon-plus-sign"></span> Добавить занятие</a>
 
                     </div>

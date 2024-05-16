@@ -240,15 +240,27 @@ def lesson_new(request, pk):
         form = LessonForm()
     return render(request, 'schedule/new_lesson.html', {'lesson_form': form, 'group': group})
 
-def lesson_details(request, lesson_id):  #, lesson_det_id, student_id
+def lesson_details(request, lesson_id):
     lesson = get_object_or_404(Lesson, pk=lesson_id)
     lesson_status = get_object_or_404(LessonStatus, lesson=lesson)
     end_time = (lesson.start_time + timedelta(hours=lesson.duration))
 
+    try:
+        students_attendance = StudentsAttendance.objects.get(lesson=lesson)
+        students_attended = students_attendance.students.all()
+        attendance_message = ""
+    except StudentsAttendance.DoesNotExist:
+        students_attended = []  
+        attendance_message = "Ученики ещё не отмечены"
 
-    #lesson_details = get_object_or_404(LessonDetails, lesson_det=lesson_det_id)
-    #students_on_lesson = get_object_or_404(StudentsAttendance, student=student_id)
-    return render(request, 'schedule/lesson_details.html', { 'lesson': lesson,  'lesson_status': lesson_status, 'end_time': end_time})
+    context = {
+        'lesson': lesson,
+        'lesson_status': lesson_status,
+        'end_time': end_time,
+        'students_attended': students_attended,
+        'attendance_message': attendance_message
+    }
+    return render(request, 'schedule/lesson_details.html', context)
 
 def add_status_to_lesson(request, pk):
     lesson = get_object_or_404(Lesson, pk=pk)
@@ -271,20 +283,28 @@ def create_lesson_status(sender, instance, created, **kwargs):
 
 def add_students_to_lesson(request, pk):
     lesson = get_object_or_404(Lesson, pk=pk)
-    if request.method == 'GET':
-        form = StudentsAttendanceForm(lesson=lesson)
-        return render(request, 'schedule/add_students_to_lesson.html', {
-            'form': form,
-            'lesson': lesson
-        })
-    elif request.method == 'POST':
-        form = StudentsAttendanceForm(request.POST, lesson=lesson)
+
+    try:
+        students_attendance = StudentsAttendance.objects.get(lesson=lesson)
+    except StudentsAttendance.DoesNotExist:
+        students_attendance = StudentsAttendance(lesson=lesson)
+        students_attendance.save()
+
+    if request.method == 'POST':
+        form = StudentsAttendanceForm(request.POST, instance=students_attendance)
         if form.is_valid():
-            students_attendance = form.save(commit=False)
-            students_attendance.lesson = lesson
-            students_attendance.save()
-            form.save_m2m()
+            form.save()
             return redirect('lesson_details', lesson_id=pk)
-        return render(request, 'schedule/add_students_to_lesson.html', {
-            'form': form,
-            'lesson': lesson})
+    else:
+        initial = {'students': students_attendance.students.all()}
+        form = StudentsAttendanceForm(initial=initial)
+
+    students_in_group = Students_in_group.objects.filter(group=lesson.group).first()
+    if students_in_group:
+        form.fields['students'].queryset = students_in_group.student.all()
+
+    return render(request, 'schedule/add_students_to_lesson.html', {
+        'form': form,
+        'lesson': lesson,
+    })
+

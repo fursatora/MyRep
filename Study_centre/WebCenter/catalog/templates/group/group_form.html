@@ -1,21 +1,38 @@
 {% extends "base_generic.html" %}
 {% block content%}
 <div class="col-md-8 col-lg-9 content-container" style="background-color: #ccdbf6" xmlns="http://www.w3.org/1999/html">
-    <h1 class="h3 text-center mt-3">Добавление/редактирование группы</h1>
+    <h1 class="h3 text-center mt-3">Добавление группы</h1>
     <h2 class="lead text-center"></h2>
     <hr class="mb-5">
     <section >
-        <h1>Группа</h1>
         <h3>Шаг 1: Общие сведения</h3>
         <div class="form-group p-2">
             <form method="POST" class="d-block p-2">
                 {% csrf_token %}
-                {% for field in group_form %}
+                    <div class="form-group col-md-6">
+                        <h5>{{ group_form.grade.label_tag }}</h5>
+                        {{ group_form.grade}}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <h5>{{ group_form.group_capacity.label_tag }}</h5>
+                        {{ group_form.group_capacity}}
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-md-6">
+                        <h5>{{ group_form.subject.label_tag }}</h5>
+                        {{ group_form.subject }}
+                      </div>
+                      <div class="form-group col-md-6">
+                        <h5>{{ group_form.type.label_tag }}</h5>
+                        {{ group_form.type }}
+                      </div>
+                    </div>
+                <!--{% for field in group_form %}
                     <div>
-                        {{field.label_tag}}
+                        <h5>{{field.label_tag}}</h5>
                          <div>{{field}}</div>
                     </div>
-                {% endfor %}
+                {% endfor %}-->
                 <div>
                     <a class="btn btn-secondary" href="{% url 'groups' %}">Отмена</a>
                     <button type="submit" class="save btn btn-primary">Назначить преподавателя</button>

@@ -19,17 +19,26 @@
                             {% elif lesson_status.status == 1 %} проведено
                             {% elif lesson_status.status == 3 %} не отмечено
                             {% endif %}
-                                <p>
-                                    <a class="btn btn-success" href="{% url 'add_students_to_lesson' pk=lesson.id %}">
-                                        <span class="glyphicon glyphicon-plus-sign"></span> Отметить студентов</a>
-                                </p>
+                            <p>
+                                <h4>Присутствующие студенты:</h4>
+                                {% if students_attended %}
+                                    <ul>
+                                        {% for student in students_attended %}
+                                        <li><h5>{{ student }}</h5></li>
+                                        {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    <h5>{{ attendance_message }}</h5>
+                                {% endif %}
+                            </p>
 
-                                <h3>Отмеченные студенты:</h3>
-                                {% for student in students %}
-            <li>{{ student.firstname }} {{ student.lastname }}</li>
-        {% endfor %}
                             </td>
                         </h5></p>
+
+                        <p>
+                            <a class="btn btn-success" href="{% url 'add_students_to_lesson' pk=lesson.id %}">
+                                <span class="glyphicon glyphicon-plus-sign"></span> Отметить студентов</a>
+                        </p>
                     </div>
                 </section>
             </div>
