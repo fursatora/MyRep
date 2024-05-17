@@ -3,16 +3,21 @@
     <div class="col-md-8 col-lg-9 content-container" style="background-color: #ccdbf6">
         <h1 class="h3 text-center mt-3">Добавление учеников в группу</h1>
         <hr class="mb-5">
-        <section>
-            <form method="POST" class="d-block p-2">
-                {% csrf_token %}
-                <label><h4><a>Выберите учащихся (не более {{ group.group_capacity }})</a></h4></label>
-                <h5>{{ add_student_form.student}}</h5>
-                <div>
-                    <button type="submit" class="save btn btn-primary">Сохранить</button>
-                <a class="btn btn-secondary" href="{% url 'group_detail' pk=group.id %}">Отмена</a>
+        <section style="background-color: rgba(158,180,243,0.68); padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <div class="container">
+                <h5 style="color: #0f203b; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); font-size: 2em;">Состав учащихся группы:</h5>
+                <form method="POST" class="p-4 my-4" style="background-color: #c0cff3; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                    {% csrf_token %}
+                    <div class="border p-3 mb-4">
+                    <label><h4><a>Выберите учащихся (не более {{ group.group_capacity }})</a></h4></label>
+                    <h5>{{ add_student_form.student }}</h5>
                 </div>
-            </form>
+                <div class="d-flex justify-content-between">
+                    <a class="btn btn-secondary mt-3" href="{% url 'group_detail' pk=group.id %}">Отмена</a>
+                    <button type="submit" class="btn btn-primary mt-3">Сохранить</button>
+                </div>
+                </form>
+            </div>
         </section>
     </div>
 {% endblock content %}

@@ -47,10 +47,41 @@
                 display: block;
             }
             .two-column-radio {
-  display: grid;
-  grid-template-columns: 1fr 1fr;  /*  Два столбца одинаковой ширины */
-  gap: 10px; /* Промежуток между столбцами */
-}
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px; /
+            }
+            .lesson-group {
+                margin-bottom: 20px;
+            }
+
+            .lesson-month {
+                color: #333;
+                font-size: 1.5em;
+                margin-bottom: 10px;
+            }
+
+            .lesson-table {
+                width: 100%;
+            }
+
+            .lesson-status span {
+                font-size: 1.5em;
+                margin: 0 auto;
+                display: block;
+            }
+
+            .status-icon-canceled {
+                color: #fc3636; /* цвет для отмененного занятия */
+            }
+
+            .status-icon-completed {
+                color: #32e740; /* цвет для проведенного занятия */
+            }
+
+            .status-icon-not-marked {
+                color: #fce236; /* цвет для неотмеченного занятия */
+            }
 
 
 }

@@ -3,15 +3,15 @@
 
 {% block content %}
     <div class="col-md-8 col-lg-9 content-container" style="background-color: #ccdbf6">
-        <h1 class="h3 text-center mt-3">Изменение статуса занятия</h1>
+        <h1 class="h3 text-center mt-3">Изменение деталей занятия</h1>
         <hr class="mb-5">
         <section>
             <form method="post" class="form-horizontal">
                 {% csrf_token %}
-                    <label style="font-size: 20px;">
-                        {{ form.status.label_tag }}
-                    </label>
-                    {{ form.status }}
+                <div class="form-group col-md-5">
+                    <h5>{{ form.reason.label_tag }}</h5>
+                    {{form.reason|add_class:"form-control"}}
+                </div>
                 <button type="submit" class="btn btn-primary">Сохранить</button>
                 <a class="btn btn-secondary" href="{% url 'lesson_details' lesson_id=lesson.id %}">Отмена</a>
             </form>

@@ -33,6 +33,10 @@ class Student(models.Model):
     objects=models.Manager()
     DoesNotExist = models.Manager
 
+    def get_subjects(self):
+        subjects = self.student_subjects.values_list('subjects__name', flat=True)
+        return ", ".join(subjects)
+
     def __str__(self):
         return f"{self.lastname} {self.firstname}"
     __str__.short_description = 'Ученик'
@@ -56,9 +60,12 @@ class Worker(models.Model):
     def __str__(self):
       return self.firstname
 
-
     def __all__(self):
       return self.subject
+
+    def get_subjects(self):
+        subjects = self.subject.values_list('name', flat=True)
+        return ", ".join(subjects)
 
 
 class Student_Subjects(models.Model):
@@ -117,11 +124,16 @@ class LessonStatus(models.Model):
     status = models.IntegerField(null=True, default=3)
     objects = models.Manager()
 
-class LessonDetails(models.Model):
+class LessonInfo(models.Model):
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
-    topic=models.TextField(null=True, default="нет", max_length=100)
-    homework=models.TextField(null=True, default="нет", max_length=300)
-    notes=models.TextField(null=True, default="нет", max_length=300)
+    topic=models.TextField(null=True, max_length=100)
+    homework=models.TextField(null=True, max_length=300)
+    notes=models.TextField(null=True, max_length=300)
+    objects = models.Manager()
+
+class LessonCancel(models.Model):
+    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
+    reason = models.TextField(null=True)
     objects = models.Manager()
 
 

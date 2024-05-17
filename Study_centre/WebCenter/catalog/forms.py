@@ -7,13 +7,11 @@ from .models import Group
 from .models import Type
 from .models import Students_in_group
 from .models import Lesson
+from .models import LessonInfo
 from .models import StudentsAttendance
-from .models import LessonDetails
-from .models import LessonStatus
+from .models import LessonStatus, LessonCancel
 from datetime import time
 from datetime import datetime, timedelta
-from django.forms import Widget
-
 
 class StudentForm(forms.ModelForm):
     required_css_class = "field"
@@ -40,6 +38,8 @@ class StudentForm(forms.ModelForm):
 
 
 class WorkerForm(forms.ModelForm):
+    date_of_birth = forms.DateField(label="Дата рождения", widget=forms.DateInput(attrs={'type': 'date'}))
+    registration_date = forms.DateField(label="Дата регистрации", widget=forms.DateInput(attrs={'type': 'date'}))
     class Meta:
         model = Worker
         subject = forms.ModelMultipleChoiceField(
@@ -65,6 +65,7 @@ class WorkerForm(forms.ModelForm):
             'fathername': forms.TextInput(attrs={'placeholder': 'отчество'}),
             'gender': forms.RadioSelect(attrs={'name': 'gender'}, choices=gen_choices),
             'phone_number': forms.TextInput(attrs={'placeholder': '8'}),
+            'email': forms.TextInput(attrs={'placeholder': 'example@gmail.com'}),
         }
 
 class StudentSubjectsForm(forms.ModelForm):
@@ -106,7 +107,7 @@ class GroupForm(forms.ModelForm):
         widgets = {
             'grade': forms.Select(attrs={'placeholder': 'от 1 до 11'},choices=grade_choices),
             'group_capacity': forms.Select(attrs={'placeholder': 'от 1 до 8'}, choices=capacity_choices),
-            'subject': forms.RadioSelect(attrs={'placeholder': 'выберите дисциплину', 'class': 'two-column-radio'}),
+            'subject': forms.RadioSelect(attrs={'placeholder': 'выберите дисциплину'}),
             'type': forms.RadioSelect(attrs={'placeholder': 'выберите тип занятий'}),
         }
 
@@ -170,9 +171,9 @@ class LessonStatusForm(forms.ModelForm):
         labels = {'status': "Статус",}
         widgets = {'status': forms.RadioSelect(choices=((0, 'отменено'), (1, 'проведено'), (3, 'не отмечено')))}
 
-class LessonDetailsForm(forms.ModelForm):
+class LessonInfoForm(forms.ModelForm):
     class Meta:
-        model = LessonDetails
+        model = LessonInfo
         fields=('topic', 'homework', 'notes')
         labels ={
             'topic': "Тема",
@@ -180,9 +181,9 @@ class LessonDetailsForm(forms.ModelForm):
             'notes': "Заметки",
         }
         widgets ={
-            'topic': forms.Select(),
-            'homework': forms.Select(attrs={'placeholder': 'не более 300 символов'}),
-            'notes': forms.Select(attrs={'placeholder': 'не более 300 символов'}),
+            'topic': forms.TextInput(),
+            'homework': forms.Textarea(attrs={'placeholder': 'не более 300 символов'}),
+            'notes': forms.Textarea(attrs={'placeholder': 'не более 300 символов'}),
         }
 
 class StudentsAttendanceForm(forms.ModelForm):
@@ -194,6 +195,17 @@ class StudentsAttendanceForm(forms.ModelForm):
         }
         widgets = {
             'students': forms.CheckboxSelectMultiple(),
+        }
+
+class LessonСancelForm(forms.ModelForm):
+    class Meta:
+        model = LessonCancel
+        fields=['reason']
+        labels ={
+            'reason': "Причина",
+        }
+        widgets ={
+            'reason': forms.Textarea(attrs={'placeholder': 'не более 300 символов'}),
         }
 
 

@@ -4,30 +4,43 @@
                 <h1 class="h3 text-center mt-3">Информация о группе</h1>
                 <h2 class="lead text-center"></h2>
                 <hr class="mb-5">
-                <section >
-                    <div class="group">
-                        <h3>Группа № {{ group.id }}</h3>
-                        <h5>Класс: {{ group.grade }}</h5>
-                        <h5>Дисциплина: {{ group.subject }}</h5>
-                        <h5>Программа: {{ group.type }}</h5>
-                        <h5>Преподаватель: {{ group.teacher.lastname }} {{ group.teacher.firstname }} {{ group.teacher.fathername }}</h5>
-
-                        <p>
-                            <h4>Список учащихся:</h4>
-                            {% for student in students.student.all %}
-                            <h5><li>{{ student }}</li></h5>
-                            {% endfor %}
-                        </p>
-
-                        <h1>
-                            <a class="btn btn-primary" href="{% url 'edit_teacher' pk=group.pk %}"><span class="glyphicon glyphicon-pencil"></span> Изменить преподавателя</a>
-                            <a class="btn btn-primary" href="{% url 'add_student_in_group' pk=group.pk %}"><span class="glyphicon glyphicon-pencil"></span> Изменить учащихся</a>
-                        </h1>
-                        <a class="btn btn-danger" href="{% url 'group_delete' pk=group.pk %}"><span class="glyphicon glyphicon-trash"></span> Удалить</a>
-
-                        <a class="btn btn-success" href="{% url 'lesson_new' pk=group.id %}"><span class="glyphicon glyphicon-plus-sign"></span> Добавить занятие</a>
-
-                    </div>
-                </section>
+                    <section>
+                        <div class="group card mt-5" style="background-color: rgba(156,173,213,0.38);">
+                            <div class="card-body">
+                                <h3>Группа № {{ group.id }}</h3>
+                                <h5>Класс: {{ group.grade }}</h5>
+                                <hr>
+                                <h5>Дисциплина: {{ group.subject }}</h5>
+                                <h5>Программа: {{ group.type }}</h5>
+                                <h5>Преподаватель: {{ group.teacher.lastname }} {{ group.teacher.firstname }} {{ group.teacher.fathername }}</h5>
+                                <hr>
+                                <h4>Список учащихся:</h4>
+                                <ul>
+                                    {% for student in students.student.all %}
+                                        <li><h5>{{ student }}</h5></li>
+                                    {% endfor %}
+                                </ul>
+                                <hr>
+                                <div class="d-flex justify-content-between mt-3">
+                                    <div>
+                                        <a class="btn btn-info" href="{% url 'edit_teacher' pk=group.pk %}">
+                                            <span class="glyphicon glyphicon-pencil"></span> Изменить преподавателя
+                                        </a>
+                                        <a class="btn btn-info" href="{% url 'add_student_in_group' pk=group.pk %}">
+                                            <span class="glyphicon glyphicon-pencil"></span> Изменить учащихся
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a class="btn btn-danger" href="{% url 'group_delete' pk=group.pk %}">
+                                            <span class="glyphicon glyphicon-trash"></span> Удалить
+                                        </a>
+                                        <a class="btn btn-success" href="{% url 'lesson_new' pk=group.id %}">
+                                            <span class="glyphicon glyphicon-plus-sign"></span> Добавить занятие
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
             </div>
 {% endblock content %}

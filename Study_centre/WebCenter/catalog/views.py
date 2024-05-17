@@ -1,45 +1,27 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
 from django.http import*
-from django.http import JsonResponse
 from datetime import datetime, timedelta
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.contrib import messages
 
-from .forms import StudentForm
-from .models import Student, LessonDetails
+
+from .forms import StudentForm, StudentSubjectsForm
+from .models import Student, Student_Subjects
 
 from .forms import WorkerForm
 from .models import Worker
 
 from .models import Subject
 
-from .forms import StudentSubjectsForm
-from .models import Student_Subjects
+from .forms import GroupForm,GroupTeacherForm, StudentsInGroupForm
+from .models import Group,Students_in_group
 
-from .forms import GroupForm
-from .models import Group
-from .forms import GroupTeacherForm
-
-from .forms import StudentsInGroupForm
-from .models import Students_in_group
-
-from .forms import LessonForm
-from .models import Lesson
-from .models import LessonDetails
-from .forms import LessonDetailsForm
-from .models import LessonStatus
-from .forms import LessonStatusForm
-from django.views import View
-
-
-
-from .models import StudentsAttendance
-from .forms import StudentsAttendanceForm
+from .forms import LessonForm,LessonStatusForm,StudentsAttendanceForm, LessonInfoForm, LessonСancelForm
+from .models import Lesson,LessonStatus,StudentsAttendance, LessonInfo, LessonCancel
 
 from django.shortcuts import redirect
 from itertools import groupby
-from django.utils.timezone import localtime
 
 def index(request):
     return render(request, "index.html")
@@ -59,9 +41,21 @@ def schedule(request):
             lesson.status = LessonStatus.objects.get(lesson=lesson)
     return render(request, 'schedule/schedule.html', {'grouped_lessons': grouped_lessons})
 
+
 def students(request):
     students= Student.objects.all()
-    return render(request, "student/students.html", {"students": students})
+    student_subjects = Student_Subjects.objects.all()
+    students_by_grade = {}
+
+    for student in students:
+        grade = student.grade
+        if grade not in students_by_grade:
+            students_by_grade[grade] = []
+        students_by_grade[grade].append(student)
+
+    sorted_students = sorted(students_by_grade.items())
+    return render(request, "student/students.html", {"students": students, "student_subjects": student_subjects, "sorted_students": sorted_students})
+
 def workers(request):
     workers=Worker.objects.all()
     return render(request, "worker/workers.html",{"workers": workers})
@@ -205,7 +199,7 @@ def edit_teacher(request, pk):
     else:
         teachers = Worker.objects.filter(subject=subject)
         form = GroupTeacherForm(instance=group)
-    return render(request, 'group/edit_teacher.html', {'select_teacher_form': form, 'teachers': teachers})
+    return render(request, 'group/edit_teacher.html', {'select_teacher_form': form, 'teachers': teachers, 'group': group})
 
 def add_student_in_group(request, pk):
     group = get_object_or_404(Group, pk=pk)
@@ -246,19 +240,37 @@ def lesson_details(request, lesson_id):
     end_time = (lesson.start_time + timedelta(hours=lesson.duration))
 
     try:
+        lesson_info = LessonInfo.objects.get(lesson=lesson)
+    except LessonInfo.DoesNotExist:
+        lesson_info = LessonInfo(lesson=lesson)
+
+    try:
+        lesson_cancel = LessonCancel.objects.get(lesson=lesson)
+    except LessonCancel.DoesNotExist:
+        lesson_cancel = LessonCancel(lesson=lesson)
+
+    try:
         students_attendance = StudentsAttendance.objects.get(lesson=lesson)
         students_attended = students_attendance.students.all()
         attendance_message = ""
     except StudentsAttendance.DoesNotExist:
-        students_attended = []  
+        students_attended = []
         attendance_message = "Ученики ещё не отмечены"
+
+    group = get_object_or_404(Group, pk=lesson.group.id)
+    teacher = group.teacher
+    subject = group.subject
+    type = group.type
 
     context = {
         'lesson': lesson,
         'lesson_status': lesson_status,
         'end_time': end_time,
         'students_attended': students_attended,
-        'attendance_message': attendance_message
+        'attendance_message': attendance_message,
+        'lesson_info': lesson_info,
+        'lesson_cancel': lesson_cancel,
+        'group': group,
     }
     return render(request, 'schedule/lesson_details.html', context)
 
@@ -308,3 +320,41 @@ def add_students_to_lesson(request, pk):
         'lesson': lesson,
     })
 
+def lesson_info(request, lesson_id):
+    lesson = get_object_or_404(Lesson, pk=lesson_id)
+    try:
+        lesson_info = LessonInfo.objects.get(lesson=lesson)
+    except LessonInfo.DoesNotExist:
+        lesson_info = LessonInfo(lesson=lesson)
+
+    if request.method == 'POST':
+        form = LessonInfoForm(request.POST, instance=lesson_info)
+        if form.is_valid():
+            form.save()
+            return redirect('lesson_details', lesson_id=lesson_id)
+    else:
+        form = LessonInfoForm(instance=lesson_info)
+
+    return render(request, 'schedule/lesson_info_form.html', {'form': form, 'lesson': lesson})
+
+def delete_lesson(request, lesson_id):
+    lesson = get_object_or_404(Lesson, pk=lesson_id)
+    lesson.delete()
+    return redirect('schedule')
+
+def lesson_cancel(request, lesson_id):
+    lesson = get_object_or_404(Lesson, pk=lesson_id)
+    try:
+        lesson_cancel = LessonCancel.objects.get(lesson=lesson)
+    except LessonCancel.DoesNotExist:
+        lesson_cancel = LessonCancel(lesson=lesson)
+
+    if request.method == 'POST':
+        form = LessonСancelForm(request.POST, instance=lesson_cancel)
+        if form.is_valid():
+            form.save()
+            return redirect('lesson_details', lesson_id=lesson_id)
+    else:
+        form = LessonСancelForm(instance=lesson_cancel)
+
+    return render(request, 'schedule/lesson_cancel_form.html', {'form': form, 'lesson': lesson})

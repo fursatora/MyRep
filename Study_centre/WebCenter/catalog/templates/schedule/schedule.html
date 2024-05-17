@@ -4,42 +4,53 @@
                 <h1 class="h3 text-center mt-3">Расписание</h1>
                 <h2 class="lead text-center"></h2>
                 <hr class="mb-5">
-                <section >
+               <section style="background-color: rgb(196, 211, 237); padding: 20px;">
                     {% for month, lessons in grouped_lessons.items %}
-                    <h2>{{ month|date:"F Y" }}</h2>
-                    <table id="mytable">
-                        <tr>
-                            <th>Детали</th>
-                            <th>Статус</th>
-                            <th>№ Группы</th>
-                            <th>Дата</th>
-                            <th>Начало</th>
-                            <th>Конец</th>
-                        </tr>
-                        {% for lesson in lessons %}
-                        <tr>
-                            <td class="text-center"><a href="{% url 'lesson_details' lesson_id=lesson.id %}" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a></td>
-                            <td class="text-center">
-                                {% if lesson.status.status == 0 %}
-                                <span class="glyphicon glyphicon-remove-sign"
-                                style="font-size: 1.5em; color: #fc3636;"></span>
+                    <div class="lesson-group mt-4" style="margin-bottom: 20px; background-color: rgba(195, 212, 245, 0.94); border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+                        <h3 class="lesson-month" style="color: #333; font-size: 1.5em; margin-bottom: 10px; padding: 10px; background-color: rgba(160,184,239,0.94); border-top-left-radius: 5px; border-top-right-radius: 5px;">{{ month|date:"F Y" }}</h3>
+                        <div class="table-responsive" style="width: 100%;">
+                            <table class="table table-striped table-bordered lesson-table" style="width: 100%; border-collapse: collapse;">
+                                <thead>
+                                    <tr style="background-color: rgba(158,180,243,0.68);">
+                                        <th>Статус</th>
+                                        <th>№ Группы</th>
+                                        <th>Дата</th>
+                                        <th>Начало</th>
+                                        <th>Конец</th>
+                                        <th>Дисциплина</th>
+                                        <th>Преподаватель</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for lesson in lessons %}
+                                    <tr class="lesson-row" style="cursor: pointer;" onclick="window.location='{% url 'lesson_details' lesson_id=lesson.id %}';" onmouseover="this.style.backgroundColor='rgba(74, 78, 137, 0.28)';" onmouseout="this.style.backgroundColor='';">
+                                        <td class="text-center lesson-status">
+                                            {% if lesson.status.status == 0 %}
+                                                <span style="color: #cc4a4a;" class="glyphicon glyphicon-remove-sign"></span>
+                                            {% elif lesson.status.status == 1 %}
+                                                <span style="color: #5caf60;" class="glyphicon glyphicon-ok-sign"></span>
+                                            {% elif lesson.status.status == 3 %}
+                                                <span style="color: #d3a33c;" class="glyphicon glyphicon-question-sign"></span>
+                                            {% endif %}
+                                        </td>
+                                        <td class="text-center" style="font-size: 1.5em;">{{ lesson.group.id }}</td>
+                                        <td>{{ lesson.date|date:"d E" }}</td>
+                                        <td>{{ lesson.start_time|time:"H:i" }}</td>
+                                        <td>{{ lesson.end_time|time:"H:i" }}</td>
+                                        <td>{{ lesson.group.subject }}</td>
+                                        <td>{{ lesson.group.teacher.lastname }} {{ lesson.group.teacher.firstname }} {{ lesson.group.teacher.fathername }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    {% endfor %}
+               </section>
 
-                                {% elif lesson.status.status == 1 %}
-                                <span class="glyphicon glyphicon-ok-sign"
-                                style="font-size: 1.5em; color: #32e740;"></span>
+                <style>
+                    .lesson-row:hover {background-color: rgba(220, 129, 129, 0);}
+                </style>
 
-                                {% elif lesson.status.status == 3 %}
-                                <span class="glyphicon glyphicon-question-sign"
-                                style="font-size: 1.5em; color: #fce236;"></span>
-                                {% endif %}
-                            </td>
-                            <td>{{ lesson.group.id }}</td>
-                            <td>{{ lesson.date|date:"d E" }}</td>
-                            <td>{{ lesson.start_time|time:"H:i" }}</td>
-                            <td>{{ lesson.end_time|time:"H:i" }}</td></tr>
-                        {% endfor %}
-                    </table>
-                {% endfor %}
-                </section>
             </div>
 {% endblock content %}

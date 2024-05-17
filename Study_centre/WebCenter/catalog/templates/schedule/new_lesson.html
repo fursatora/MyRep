@@ -1,24 +1,41 @@
 {% extends "base_generic.html" %}
+{% load widget_tweaks %}
 {% block content%}
 <div class="col-md-8 col-lg-9 content-container" style="background-color: #ccdbf6" xmlns="http://www.w3.org/1999/html">
                 <h1 class="h3 text-center mt-3">Добавление занятия</h1>
                 <h2 class="lead text-center"></h2>
                 <hr class="mb-5">
-                <section >
-                    <h3>Добавить занятие для группы № {{group.id}}</h3>
-                     <div class="form-group p-2">
-                        <form method="POST" class="d-block p-2">
-                            {% csrf_token %}
-                            {% for field in lesson_form %}
-                                <div>
-                                    {{field.label_tag}}
-                                     <div>{{field}}</div>
+    <section style="background-color: rgba(158,180,243,0.68); padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <div class="container">
+            <h1 style="color: #0f203b; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); font-size: 2.5em;">Дата занятия</h1>
+            <form method="POST" class="p-4 my-4" style="background-color: #c0cff3; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                {% csrf_token %}
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        {{ lesson_form.date.label_tag }}
+                        {{ lesson_form.date|add_class:"form-control" }}
+                    </div>
+                    <div class="col-md-4">
+                        {{ lesson_form.start_time.label_tag }}
+                        {{ lesson_form.start_time|add_class:"form-control" }}
+                    </div>
+                </div>
+                <div class="col-md-3">
+                        {{ lesson_form.duration.label_tag }}
+                        <div>
+                            {% for radio in lesson_form.duration %}
+                                <div class="form-check form-check-inline">
+                                    {{ radio }}
                                 </div>
                             {% endfor %}
-                        <button type="submit" class="save btn btn-primary">Сохранить</button>
-                        <a class="btn btn-secondary" href="{% url 'group_detail' pk=group.pk %}">Отмена</a>
-                        </form>
-                     </div>
-                </section>
-            </div>
+                        </div>
+                    </div>
+                <div class="mt-4 text-left">
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                    <a class="btn btn-secondary" href="{% url 'group_detail' pk=group.pk %}">Отмена</a>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
 {% endblock content %}
