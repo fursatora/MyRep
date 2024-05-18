@@ -5,16 +5,18 @@
     <div class="col-md-8 col-lg-9 content-container" style="background-color: #ccdbf6">
         <h1 class="h3 text-center mt-3">Добавление изучаемых дисциплин</h1>
         <hr class="mb-5">
-        <section>
-            <form method="post" class="form-horizontal">
-                {% csrf_token %}
-                    <label style="font-size: 20px;">
-                        {{ form2.subjects.label_tag }}
-                    </label>
-                    {{ form2.subjects }}
-                <button type="submit" class="btn btn-primary">Сохранить</button>
+        <section style="background-color: rgba(158,180,243,0.68); padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <div class="container">
+                <h5 style="color: #0f203b; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); font-size: 2em;">Предпочитаемые к изучению дисциплины:</h5>
+                <form method="POST" class="p-4 my-4" style="background-color: #c0cff3; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                    {% csrf_token %}
+                    <h4>{{ form2.subjects }}</h4>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
                 <a class="btn btn-secondary" href="{% url 'student_detail' pk=student.pk %}">Отмена</a>
-            </form>
+                </form>
+            </div>
         </section>
     </div>
 {% endblock content %}
