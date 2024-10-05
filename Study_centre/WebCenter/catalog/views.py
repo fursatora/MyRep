@@ -358,3 +358,20 @@ def lesson_cancel(request, lesson_id):
         form = LessonСancelForm(instance=lesson_cancel)
 
     return render(request, 'schedule/lesson_cancel_form.html', {'form': form, 'lesson': lesson})
+
+def add_materials_to_lesson(request, lesson_id):
+    lesson = get_object_or_404(Lesson, pk=lesson_id)
+    try:
+        lesson_info = LessonInfo.objects.get(lesson=lesson)
+    except LessonInfo.DoesNotExist:
+        lesson_info = LessonInfo(lesson=lesson)
+
+    if request.method == 'POST':
+        form = LessonInfoForm(request.POST, instance=lesson_info)
+        if form.is_valid():
+            form.save()
+            return redirect('lesson_details', lesson_id=lesson_id)
+    else:
+        form = LessonInfoForm(instance=lesson_info)
+
+    return render(request, 'schedule/add_materials_form.html', {'form': form, 'lesson': lesson})

@@ -129,6 +129,7 @@ class LessonInfo(models.Model):
     topic=models.TextField(null=True, max_length=100)
     homework=models.TextField(null=True, max_length=300)
     notes=models.TextField(null=True, max_length=300)
+    materials = models.URLField(null=True, blank=True)
     objects = models.Manager()
 
 class LessonCancel(models.Model):

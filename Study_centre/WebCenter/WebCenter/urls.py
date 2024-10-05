@@ -51,5 +51,7 @@ urlpatterns = [
     path('schedule/<int:lesson_id>/add/info/', views.lesson_info, name='lesson_info'),
     path('schedule/<int:lesson_id>/delete/', views.delete_lesson, name='delete_lesson'),
     path('schedule/<int:lesson_id>/add/cancel/', views.lesson_cancel, name='lesson_cancel'),
+    path('schedule/<int:lesson_id>/add/materials/', views.add_materials_to_lesson, name='add_materials_to_lesson'),
+
 
 ]

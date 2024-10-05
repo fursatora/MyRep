@@ -174,16 +174,18 @@ class LessonStatusForm(forms.ModelForm):
 class LessonInfoForm(forms.ModelForm):
     class Meta:
         model = LessonInfo
-        fields=('topic', 'homework', 'notes')
+        fields=('topic', 'homework', 'notes', 'materials')
         labels ={
             'topic': "Тема",
             'homework': "Домашнее задание",
             'notes': "Заметки",
+            'materials': "Ссылка на материалы"
         }
         widgets ={
             'topic': forms.TextInput(),
             'homework': forms.Textarea(attrs={'placeholder': 'не более 300 символов'}),
             'notes': forms.Textarea(attrs={'placeholder': 'не более 300 символов'}),
+            'materials': forms.URLInput(attrs={'placeholder': 'Введите URL материалов'}),
         }
 
 class StudentsAttendanceForm(forms.ModelForm):
