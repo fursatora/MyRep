@@ -7,7 +7,9 @@ conn = pymysql.connect(
       db="dbcenter",
       user="fursatora",
       passwd="fursatora",
-      ssl={'ca': '~/.mysql/root.crt'})
+      #ssl={'ca': '/home/fursatora/.mysql/root.crt'}
+      )
+
 
 cur = conn.cursor()
 cur.execute('SELECT version()')
