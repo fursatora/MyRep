@@ -391,13 +391,20 @@ def add_materials_to_lesson(request, lesson_id):
     return render(request, 'schedule/add_materials_form.html', {'form': form, 'lesson': lesson})
 
 def validate_captcha(captcha_token):
-    secret_key = settings.SMARTCAPTCHA_SECRET_KEY
-    url = 'https://smartcaptcha.yandexcloud.net/validate'
+    try:
+        secret_key = settings.SMARTCAPTCHA_SECRET_KEY
+        url = 'https://smartcaptcha.yandexcloud.net/validate'
 
-    response = requests.post(url, data={
-        'secret': secret_key,
-        'token': captcha_token
-    })
+        response = requests.post(url, data={
+            'secret': secret_key,
+            'token': captcha_token
+        })
 
-    result = response.json()
-    return result.get('status') == 'ok'
+        if response.status_code != 200:
+            raise Exception("Ошибка при валидации капчи.")
+
+        result = response.json()
+        return result.get('status') == 'ok'
+    except Exception as e:
+        print(f"Ошибка: {e}")
+        return False
