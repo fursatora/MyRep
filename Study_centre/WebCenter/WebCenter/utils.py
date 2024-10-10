@@ -1,9 +1,10 @@
-from yandex.cloud import SecretManagerServiceClient
 from yandex.cloud import get_sdk
+from yandex.cloud.secret_manager.v1.secret_service import SecretServiceClient
+from yandex.cloud.exceptions import NotFoundError
 
 def get_secret(secret_name):
     sdk = get_sdk()
-    secret_service_client = sdk.client(SecretManagerServiceClient)
+    secret_service_client = sdk.client(SecretServiceClient)
 
     try:
         secret = secret_service_client.get(secret_name)
