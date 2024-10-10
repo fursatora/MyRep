@@ -4,7 +4,8 @@ from datetime import datetime, timedelta
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.contrib import messages
-
+import requests
+from django.conf import settings
 
 from .forms import StudentForm, StudentSubjectsForm
 from .models import Student, Student_Subjects
@@ -66,7 +67,7 @@ def student_detail(request, pk):
     student_subjects, created = Student_Subjects.objects.get_or_create(student=student)
     return render(request, 'student/student_details.html', {'student': student, 'subject': student_subjects})
 
-def student_new(request):
+"""def student_new(request):
     form = StudentForm()
     if request.method == "POST":
         form = StudentForm(request.POST)
@@ -75,6 +76,19 @@ def student_new(request):
             return redirect('students')
     else:
         form = StudentForm()
+    return render(request, 'student/student_form.html', {'form': form})"""
+def student_new(request):
+    form = StudentForm()
+    if request.method == "POST":
+        captcha_token = request.POST.get('smart-token')
+        form = StudentForm(request.POST)
+
+        if validate_captcha(captcha_token):
+            if form.is_valid():
+                form.save()
+                return redirect('students')
+        else:
+            form.add_error(None, 'Капча не пройдена.')
     return render(request, 'student/student_form.html', {'form': form})
 
 def student_edit(request, pk):
@@ -375,3 +389,15 @@ def add_materials_to_lesson(request, lesson_id):
         form = LessonInfoForm(instance=lesson_info)
 
     return render(request, 'schedule/add_materials_form.html', {'form': form, 'lesson': lesson})
+
+def validate_captcha(captcha_token):
+    secret_key = settings.SMARTCAPTCHA_SECRET_KEY
+    url = 'https://smartcaptcha.yandexcloud.net/validate'
+
+    response = requests.post(url, data={
+        'secret': secret_key,
+        'token': captcha_token
+    })
+
+    result = response.json()
+    return result.get('status') == 'ok'

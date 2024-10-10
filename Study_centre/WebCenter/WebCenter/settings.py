@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os.path
 from pathlib import Path
+from .utils import get_secret
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -92,6 +93,10 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+
+
+
+SMARTCAPTCHA_SECRET_KEY = get_secret('smartcaptcha_secret_key')
 
 
 # Password validation
