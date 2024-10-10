@@ -61,6 +61,9 @@
             font-size: 24px;
         }
     </style>
+
+    <script src="https://smartcaptcha.yandexcloud.net/captcha.js" defer></script>
+
 </head>
 
 <body>
@@ -92,6 +95,13 @@
                     </div>
                 </nav>
             </div>
+
+            <div
+                id="captcha-container"
+                class="smart-captcha"
+                data-sitekey="ysc1_2q0SOYXbzxEhwPMkTYLkkrXFx8B8c6ekBufkhRZS5d8e2498"
+                style="height: 100px"
+            ></div>
             {% block content%}
             {% endblock content %}
         </div>
