@@ -70,7 +70,7 @@ class Worker(models.Model):
 
 class Student_Subjects(models.Model):
     student=models.ForeignKey(Student, on_delete=models.CASCADE, verbose_name="Ученик", related_name="student_subjects")
-    subjects = models.ManyToManyField(Subject,blank=True,verbose_name="Дисциплины")
+    subjects = models.ManyToManyField(Subject,blank=True, null=True,verbose_name="Дисциплины")
     objects = models.Manager()
 
     def __str__(self):
@@ -101,7 +101,7 @@ class Group(models.Model):
 
 class Students_in_group(models.Model):
     group=models.ForeignKey(Group, on_delete=models.CASCADE, verbose_name="Группа")
-    student=models.ManyToManyField(Student,blank=True,verbose_name="Ученики")
+    student=models.ManyToManyField(Student,blank=True, null=True,verbose_name="Ученики")
     objects = models.Manager()
 
     def __str__(self):
@@ -116,7 +116,7 @@ class Lesson(models.Model):
 
 class StudentsAttendance(models.Model):
     lesson=models.ForeignKey(Lesson, on_delete=models.CASCADE)
-    students=models.ManyToManyField(Student,blank=True)
+    students=models.ManyToManyField(Student,blank=True, null=True)
     objects = models.Manager()
 
 class LessonStatus(models.Model):
