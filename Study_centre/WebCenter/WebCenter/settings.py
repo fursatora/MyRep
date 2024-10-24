@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['84.201.146.155','fursatora_study_center.com' ]
+ALLOWED_HOSTS = ['130.193.44.11','fursatora_study_center.com' ]
 
 
 # Application definition
@@ -133,7 +133,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "catalog/staticыы"),
+    os.path.join(BASE_DIR, "catalog/static"),
 ]
 BASE_DIR = Path(__file__).resolve().parent.parent
 
