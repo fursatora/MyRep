@@ -95,6 +95,8 @@ DATABASES = {
 }
 
 
+SECRET_ID = 'e6q4gb0idnb5p6kmk77m'
+SMARTCAPTCHA_SECRET_KEY = get_secret('SECRET_ID')
 
 
 # Password validation
